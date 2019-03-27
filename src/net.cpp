@@ -6,7 +6,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/oxid-config.h"
+#include "config/avantage-config.h"
 #endif
 
 #include "net.h"
@@ -570,7 +570,7 @@ void CNode::copyStats(CNodeStats& stats)
         nPingUsecWait = GetTimeMicros() - nPingUsecStart;
     }
 
-    // Raw ping time is in microseconds, but show it to user as whole seconds (Oxid users should be well used to small numbers with many decimal places by now :)
+    // Raw ping time is in microseconds, but show it to user as whole seconds (Avantage users should be well used to small numbers with many decimal places by now :)
     stats.dPingTime = (((double)nPingUsecTime) / 1e6);
     stats.dPingWait = (((double)nPingUsecWait) / 1e6);
 
@@ -1032,7 +1032,7 @@ void ThreadMapPort()
             }
         }
 
-        string strDesc = "Oxid " + FormatFullVersion();
+        string strDesc = "Avantage " + FormatFullVersion();
 
         try {
             while (true) {
@@ -1420,7 +1420,7 @@ void ThreadMessageHandler()
     }
 }
 
-// oxid: stake minter thread
+// avantage: stake minter thread
 void static ThreadStakeMinter()
 {
     boost::this_thread::interruption_point();
@@ -1500,7 +1500,7 @@ bool BindListenPort(const CService& addrBind, string& strError, bool fWhiteliste
     if (::bind(hListenSocket, (struct sockaddr*)&sockaddr, len) == SOCKET_ERROR) {
         int nErr = WSAGetLastError();
         if (nErr == WSAEADDRINUSE)
-            strError = strprintf(_("Unable to bind to %s on this computer. Oxid is probably already running."), addrBind.ToString());
+            strError = strprintf(_("Unable to bind to %s on this computer. Avantage is probably already running."), addrBind.ToString());
         else
             strError = strprintf(_("Unable to bind to %s on this computer (bind returned error %s)"), addrBind.ToString(), NetworkErrorString(nErr));
         LogPrintf("%s\n", strError);
@@ -1620,7 +1620,7 @@ void StartNode(boost::thread_group& threadGroup)
     // Dump network addresses
     threadGroup.create_thread(boost::bind(&LoopForever<void (*)()>, "dumpaddr", &DumpAddresses, DUMP_ADDRESSES_INTERVAL * 1000));
 
-    // oxid:mint proof-of-stake blocks in the background
+    // avantage:mint proof-of-stake blocks in the background
     if (GetBoolArg("-staking", true))
         threadGroup.create_thread(boost::bind(&TraceThread<void (*)()>, "stakemint", &ThreadStakeMinter));
 }

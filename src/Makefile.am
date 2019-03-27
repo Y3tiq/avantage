@@ -66,15 +66,15 @@ bin_PROGRAMS =
 TESTS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += oxidd
+  bin_PROGRAMS += avantaged
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += oxid-cli oxid-tx
+  bin_PROGRAMS += avantage-cli avantage-tx
 endif
 
 .PHONY: FORCE
-# oxid core #
+# avantage core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   accumulators.h \
@@ -191,7 +191,7 @@ obj/build.h: FORCE
 	  $(abs_top_srcdir)
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between oxidd and oxid-qt
+# server: shared between avantaged and avantage-qt
 libbitcoin_server_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_SOURCES = \
   addrman.cpp \
@@ -237,7 +237,7 @@ libbitcoin_zmq_a_SOURCES = \
   zmq/zmqpublishnotifier.cpp
 endif
 
-# wallet: shared between oxidd and oxid-qt, but only linked
+# wallet: shared between avantaged and avantage-qt, but only linked
 # when wallet enabled
 
 libbitcoin_wallet_a_CFLAGS = -fPIC
@@ -358,7 +358,7 @@ libzerocoin_libbitcoin_zerocoin_a_SOURCES = \
   libzerocoin/Params.cpp \
   libzerocoin/SerialNumberSignatureOfKnowledge.cpp
 
-# common: shared between oxidd, and oxid-qt and non-server tools
+# common: shared between avantaged, and avantage-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_common_a_SOURCES = \
   accumulators.cpp \
@@ -418,7 +418,7 @@ libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 libbitcoin_util_a_SOURCES += compat/glibcxx_compat.cpp
 endif
 
-# cli: shared between oxid-cli and oxid-qt
+# cli: shared between avantage-cli and avantage-qt
 libbitcoin_cli_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_SOURCES = \
   rpcclient.cpp \
@@ -428,7 +428,7 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-oxidd_LDADD = \
+avantaged_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UNIVALUE) \
@@ -440,26 +440,26 @@ oxidd_LDADD = \
   $(LIBSECP256K1)
 
 if ENABLE_ZMQ
-oxidd_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+avantaged_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
 
 if ENABLE_WALLET
-oxidd_LDADD += libbitcoin_wallet.a
+avantaged_LDADD += libbitcoin_wallet.a
 endif
-oxidd_SOURCES = oxidd.cpp
+avantaged_SOURCES = avantaged.cpp
 #
 
 if TARGET_WINDOWS
-oxidd_SOURCES += oxidd-res.rc
+avantaged_SOURCES += avantaged-res.rc
 endif
 
-oxidd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-oxidd_CPPFLAGS = $(BITCOIN_INCLUDES)
-oxidd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+avantaged_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+avantaged_CPPFLAGS = $(BITCOIN_INCLUDES)
+avantaged_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 
-# oxid-cli binary #
-oxid_cli_LDADD = \
+# avantage-cli binary #
+avantage_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBBITCOIN_UTIL) \
   $(BOOST_LIBS) \
@@ -467,14 +467,14 @@ oxid_cli_LDADD = \
   $(CRYPTO_LIBS) \
   $(EVENT_LIBS)
 
-oxid_cli_SOURCES = \
-  oxid-cli.cpp
+avantage_cli_SOURCES = \
+  avantage-cli.cpp
 
-oxid_cli_CPPFLAGS = $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+avantage_cli_CPPFLAGS = $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 #
 
-# oxid-tx binary #
-oxid_tx_LDADD = \
+# avantage-tx binary #
+avantage_tx_LDADD = \
   $(LIBBITCOIN_UNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_ZEROCOIN) \
@@ -484,15 +484,15 @@ oxid_tx_LDADD = \
   $(BOOST_LIBS) \
   $(CRYPTO_LIBS)
 
-oxid_tx_SOURCES = oxid-tx.cpp
-oxid_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
+avantage_tx_SOURCES = avantage-tx.cpp
+avantage_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
-oxid_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+avantage_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-oxid_cli_SOURCES += oxid-cli-res.rc
+avantage_cli_SOURCES += avantage-cli-res.rc
 endif
-oxid_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+avantage_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if BUILD_BITCOIN_LIBS
 include_HEADERS = script/bitcoinconsensus.h

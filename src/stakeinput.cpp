@@ -13,33 +13,33 @@
 #include "wallet.h"
 
 
-bool COxidStake::SetInput(CTransaction txPrev, unsigned int n)
+bool CAvantageStake::SetInput(CTransaction txPrev, unsigned int n)
 {
     this->txFrom = txPrev;
     this->nPosition = n;
     return true;
 }
 
-bool COxidStake::GetTxFrom(CTransaction& tx)
+bool CAvantageStake::GetTxFrom(CTransaction& tx)
 {
     tx = txFrom;
     return true;
 }
 
-bool COxidStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
+bool CAvantageStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
 {
     txIn = CTxIn(txFrom.GetHash(), nPosition);
     return true;
 }
 
-CAmount COxidStake::GetValue()
+CAmount CAvantageStake::GetValue()
 {
-    // LogPrintf("COxidStake::GetValue() txFrom.vout=%s\n", txFrom.vout[nPosition].ToString());
-    // LogPrintf("COxidStake::GetValue() nValue=%d at nPosition=%d\n", txFrom.vout[nPosition].nValue, nPosition);
+    // LogPrintf("CAvantageStake::GetValue() txFrom.vout=%s\n", txFrom.vout[nPosition].ToString());
+    // LogPrintf("CAvantageStake::GetValue() nValue=%d at nPosition=%d\n", txFrom.vout[nPosition].nValue, nPosition);
     return txFrom.vout[nPosition].nValue;
 }
 
-bool COxidStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal)
+bool CAvantageStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal)
 {
     vector<valtype> vSolutions;
     txnouttype whichType;
@@ -73,7 +73,7 @@ bool COxidStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nT
     return true;
 }
 
-bool COxidStake::GetModifier(uint64_t& nStakeModifier)
+bool CAvantageStake::GetModifier(uint64_t& nStakeModifier)
 {
     int nStakeModifierHeight = 0;
     int64_t nStakeModifierTime = 0;
@@ -87,16 +87,16 @@ bool COxidStake::GetModifier(uint64_t& nStakeModifier)
     return true;
 }
 
-CDataStream COxidStake::GetUniqueness()
+CDataStream CAvantageStake::GetUniqueness()
 {
-    //The unique identifier for a OXID stake is the outpoint
+    //The unique identifier for a AVN stake is the outpoint
     CDataStream ss(SER_NETWORK, 0);
     ss << nPosition << txFrom.GetHash();
     return ss;
 }
 
 //The block that the UTXO was added to the chain
-CBlockIndex* COxidStake::GetIndexFrom()
+CBlockIndex* CAvantageStake::GetIndexFrom()
 {
     uint256 hashBlock = 0;
     CTransaction tx;

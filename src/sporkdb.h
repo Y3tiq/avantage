@@ -3,8 +3,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef OXID_CSPORKDB_H
-#define OXID_CSPORKDB_H
+#ifndef AVN_CSPORKDB_H
+#define AVN_CSPORKDB_H
 
 #include "leveldbwrapper.h"
 #include "spork.h"
@@ -26,4 +26,4 @@ public:
 };
 
 
-#endif //OXID_CSPORKDB_H
+#endif //AVN_CSPORKDB_H

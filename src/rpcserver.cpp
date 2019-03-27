@@ -237,10 +237,10 @@ Value stop(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Oxid server.");
+            "\nStop Avantage server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "Oxid server stopping";
+    return "Avantage server stopping";
 }
 
 
@@ -319,23 +319,23 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* Oxid features */
-        {"oxid", "masternode", &masternode, true, true, false},
-        {"oxid", "listmasternodes", &listmasternodes, true, true, false},
-        {"oxid", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"oxid", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"oxid", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"oxid", "supernodecurrent", &supernodecurrent, true, true, false},
-        {"oxid", "masternodedebug", &masternodedebug, true, true, false},
-        {"oxid", "startmasternode", &startmasternode, true, true, false},
-        {"oxid", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"oxid", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"oxid", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"oxid", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"oxid", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"oxid", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"oxid", "mnsync", &mnsync, true, true, false},
-        {"oxid", "spork", &spork, true, true, false},
+        /* Avantage features */
+        {"avantage", "masternode", &masternode, true, true, false},
+        {"avantage", "listmasternodes", &listmasternodes, true, true, false},
+        {"avantage", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"avantage", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"avantage", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"avantage", "supernodecurrent", &supernodecurrent, true, true, false},
+        {"avantage", "masternodedebug", &masternodedebug, true, true, false},
+        {"avantage", "startmasternode", &startmasternode, true, true, false},
+        {"avantage", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"avantage", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"avantage", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"avantage", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"avantage", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"avantage", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"avantage", "mnsync", &mnsync, true, true, false},
+        {"avantage", "spork", &spork, true, true, false},
 #ifdef ENABLE_WALLET
 
         /* Wallet */
@@ -601,16 +601,16 @@ void StartRPCThreads()
         unsigned char rand_pwd[32];
         GetRandBytes(rand_pwd, 32);
         uiInterface.ThreadSafeMessageBox(strprintf(
-                                             _("To use oxidd, or the -server option to oxid-qt, you must set an rpcpassword in the configuration file:\n"
+                                             _("To use avantaged, or the -server option to avantage-qt, you must set an rpcpassword in the configuration file:\n"
                                                "%s\n"
                                                "It is recommended you use the following random password:\n"
-                                               "rpcuser=oxidrpc\n"
+                                               "rpcuser=avantagerpc\n"
                                                "rpcpassword=%s\n"
                                                "(you do not need to remember this password)\n"
                                                "The username and password MUST NOT be the same.\n"
                                                "If the file does not exist, create it with owner-readable-only file permissions.\n"
                                                "It is also recommended to set alertnotify so you are notified of problems;\n"
-                                               "for example: alertnotify=echo %%s | mail -s \"Oxid Alert\" admin@foo.com\n"),
+                                               "for example: alertnotify=echo %%s | mail -s \"Avantage Alert\" admin@foo.com\n"),
                                              GetConfigFile().string(),
                                              EncodeBase58(&rand_pwd[0], &rand_pwd[0] + 32)),
             "", CClientUIInterface::MSG_ERROR | CClientUIInterface::SECURE);
@@ -1061,7 +1061,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> oxid-cli " + methodname + " " + args + "\n";
+    return "> avantage-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)

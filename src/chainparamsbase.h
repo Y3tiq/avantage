@@ -10,8 +10,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between oxid-cli and oxidd)
- * of a given instance of the Oxid system.
+ * CBaseChainParams defines the base parameters (shared between avantage-cli and avantaged)
+ * of a given instance of the Avantage system.
  */
 class CBaseChainParams
 {

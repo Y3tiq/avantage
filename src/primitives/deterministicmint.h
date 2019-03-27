@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef OXID_DETERMINISTICMINT_H
-#define OXID_DETERMINISTICMINT_H
+#ifndef AVN_DETERMINISTICMINT_H
+#define AVN_DETERMINISTICMINT_H
 
 #include <libzerocoin/Denominations.h>
 #include <serialize.h>
@@ -65,4 +65,4 @@ public:
     };
 };
 
-#endif //OXID_DETERMINISTICMINT_H
+#endif //AVN_DETERMINISTICMINT_H

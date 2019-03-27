@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef OXID_ACCUMULATORS_H
-#define OXID_ACCUMULATORS_H
+#ifndef AVN_ACCUMULATORS_H
+#define AVN_ACCUMULATORS_H
 
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Coin.h"
@@ -23,4 +23,4 @@ uint32_t ParseChecksum(uint256 nChecksum, libzerocoin::CoinDenomination denomina
 uint32_t GetChecksum(const CBigNum &bnValue);
 bool InvalidCheckpointRange(int nHeight);
 
-#endif //OXID_ACCUMULATORS_H
+#endif //AVN_ACCUMULATORS_H

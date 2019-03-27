@@ -32,7 +32,7 @@ using namespace std;
 
 //////////////////////////////////////////////////////////////////////////////
 //
-// OxidMiner
+// AvantageMiner
 //
 //////////////////////////////////////////////////////////////////////////////
 
@@ -125,7 +125,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     pblocktemplate->vTxFees.push_back(-1);   // updated at end
     pblocktemplate->vTxSigOps.push_back(-1); // updated at end
 
-    // oxid: if coinstake available add coinstake tx
+    // avantage: if coinstake available add coinstake tx
     static int64_t nLastCoinStakeSearchTime = GetAdjustedTime(); // only initialized at startup
     LogPrintf("miner.cpp CreateNewBlock() nLastCoinStakeSearchTime=%d\n", nLastCoinStakeSearchTime);
     if (fProofOfStake) {
@@ -463,7 +463,7 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != chainActive.Tip()->GetBlockHash())
-            return error("OxidMiner : generated block is stale");
+            return error("AvantageMiner : generated block is stale");
     }
 
     // Remove key from key pool
@@ -478,7 +478,7 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     // Process this block the same as if we had received it from another node
     CValidationState state;
     if (!ProcessNewBlock(state, NULL, pblock))
-        return error("OxidMiner : ProcessNewBlock, block not accepted");
+        return error("AvantageMiner : ProcessNewBlock, block not accepted");
 
     for (CNode* node : vNodes) {
         node->PushInventory(CInv(MSG_BLOCK, pblock->GetHash()));
@@ -494,9 +494,9 @@ int nMintableLastCheck = 0;
 
 void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 {
-    LogPrintf("OxidMiner started\n");
+    LogPrintf("AvantageMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    RenameThread("oxid-miner");
+    RenameThread("avantage-miner");
 
     // Each thread has its own key and counter
     CReserveKey reservekey(pwallet);
@@ -575,7 +575,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
             continue;
         }
 
-        LogPrintf("Running Oxid Miner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
+        LogPrintf("Running Avantage Miner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
             ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
 
         //
@@ -593,7 +593,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
                 if (hash <= hashTarget) {
                     // Found a solution
                     SetThreadPriority(THREAD_PRIORITY_NORMAL);
-                    LogPrintf("Oxid Miner:\n");
+                    LogPrintf("Avantage Miner:\n");
                     LogPrintf("proof-of-work found  \n  hash: %s  \ntarget: %s\n", hash.GetHex(), hashTarget.GetHex());
                     ProcessBlockFound(pblock, *pwallet, reservekey);
                     SetThreadPriority(THREAD_PRIORITY_LOWEST);

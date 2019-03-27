@@ -30,10 +30,10 @@
        <item>
         <widget class="QCheckBox" name="bitcoinAtStartup">
          <property name="toolTip">
-          <string>Automatically start Oxid after logging in to the system.</string>
+          <string>Automatically start Avantage after logging in to the system.</string>
          </property>
          <property name="text">
-          <string>&amp;Start Oxid on system login</string>
+          <string>&amp;Start Avantage on system login</string>
          </property>
         </widget>
        </item>
@@ -136,10 +136,10 @@
          <item>
           <widget class="QLabel" name="percentage_label">
            <property name="toolTip">
-            <string>Percentage of incoming OXID which get automatically converted to zOXID via Zerocoin Protocol (min: 10%)</string>
+            <string>Percentage of incoming AVN which get automatically converted to zAVN via Zerocoin Protocol (min: 10%)</string>
            </property>
            <property name="text">
-            <string>Percentage of autominted zOXID</string>
+            <string>Percentage of autominted zAVN</string>
            </property>
           </widget>
          </item>
@@ -171,10 +171,10 @@
             </size>
            </property>
            <property name="toolTip">
-            <string>Wait with automatic conversion to Zerocoin until enough OXID for this denomination is available</string>
+            <string>Wait with automatic conversion to Zerocoin until enough AVN for this denomination is available</string>
            </property>
            <property name="text">
-            <string>Preferred Automint zOXID Denomination</string>
+            <string>Preferred Automint zAVN Denomination</string>
            </property>
           </widget>
          </item>
@@ -187,7 +187,7 @@
             </size>
            </property>
            <property name="toolTip">
-            <string>Wait with automatic conversion to Zerocoin until enough OXID for this denomination is available</string>
+            <string>Wait with automatic conversion to Zerocoin until enough AVN for this denomination is available</string>
            </property>
            <property name="maxVisibleItems">
             <number>9</number>
@@ -269,7 +269,7 @@
        <item>
         <widget class="QCheckBox" name="mapPortUpnp">
          <property name="toolTip">
-          <string>Automatically open the Oxid client port on the router. This only works when your router supports UPnP and it is enabled.</string>
+          <string>Automatically open the Avantage client port on the router. This only works when your router supports UPnP and it is enabled.</string>
          </property>
          <property name="text">
           <string>Map port using &amp;UPnP</string>
@@ -289,7 +289,7 @@
        <item>
         <widget class="QCheckBox" name="connectSocks">
          <property name="toolTip">
-          <string>Connect to the Oxid network through a SOCKS5 proxy.</string>
+          <string>Connect to the Avantage network through a SOCKS5 proxy.</string>
          </property>
          <property name="text">
           <string>&amp;Connect through SOCKS5 proxy (default proxy):</string>
@@ -455,7 +455,7 @@
          <item>
           <widget class="QValueComboBox" name="lang">
            <property name="toolTip">
-            <string>The user interface language can be set here. This setting will take effect after restarting Oxid.</string>
+            <string>The user interface language can be set here. This setting will take effect after restarting Avantage.</string>
            </property>
           </widget>
          </item>

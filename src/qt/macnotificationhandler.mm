@@ -15,7 +15,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"io.oxid.Oxid-Qt";
+        return @"io.avantage.Avantage-Qt";
     } else {
         return [self __bundleIdentifier];
     }

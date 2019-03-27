@@ -276,7 +276,7 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
                 return InvalidAmount;
             }
             total += subtotal;
-        } else { // User-entered oxid address / amount:
+        } else { // User-entered avantage address / amount:
             if (!validateAddress(rcp.address)) {
                 return InvalidAddress;
             }
@@ -314,7 +314,7 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
 
 
         if (recipients[0].useInstantTX && total > GetSporkValue(SPORK_4_MAX_VALUE) * COIN) {
-            emit message(tr("Send Coins"), tr("InstantTX doesn't support sending values that high yet. Transactions are currently limited to %1 OXID.").arg(GetSporkValue(SPORK_4_MAX_VALUE)),
+            emit message(tr("Send Coins"), tr("InstantTX doesn't support sending values that high yet. Transactions are currently limited to %1 AVN.").arg(GetSporkValue(SPORK_4_MAX_VALUE)),
                 CClientUIInterface::MSG_ERROR);
             return TransactionCreationFailed;
         }
@@ -323,7 +323,7 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
         transaction.setTransactionFee(nFeeRequired);
 
         if (recipients[0].useInstantTX && newTx->GetValueOut() > GetSporkValue(SPORK_4_MAX_VALUE) * COIN) {
-            emit message(tr("Send Coins"), tr("InstantTX doesn't support sending values that high yet. Transactions are currently limited to %1 OXID.").arg(GetSporkValue(SPORK_4_MAX_VALUE)),
+            emit message(tr("Send Coins"), tr("InstantTX doesn't support sending values that high yet. Transactions are currently limited to %1 AVN.").arg(GetSporkValue(SPORK_4_MAX_VALUE)),
                 CClientUIInterface::MSG_ERROR);
             return TransactionCreationFailed;
         }
@@ -365,7 +365,7 @@ WalletModel::SendCoinsReturn WalletModel::sendCoins(WalletModelTransaction& tran
                 std::string value;
                 rcp.paymentRequest.SerializeToString(&value);
                 newTx->vOrderForm.push_back(make_pair(key, value));
-            } else if (!rcp.message.isEmpty()) // Message from normal oxid:URI (oxid:XyZ...?message=example)
+            } else if (!rcp.message.isEmpty()) // Message from normal avantage:URI (avantage:XyZ...?message=example)
             {
                 newTx->vOrderForm.push_back(make_pair("Message", rcp.message.toStdString()));
             }
@@ -457,7 +457,7 @@ bool WalletModel::setWalletEncrypted(bool encrypted, const SecureString& passphr
     }
 }
 
-bool WalletModel::setWalletLocked(bool locked, const SecureString& passOxidase, bool anonymizeOnly)
+bool WalletModel::setWalletLocked(bool locked, const SecureString& passAvantagease, bool anonymizeOnly)
 {
     if (locked) {
         // Lock
@@ -465,7 +465,7 @@ bool WalletModel::setWalletLocked(bool locked, const SecureString& passOxidase, 
         return wallet->Lock();
     } else {
         // Unlock
-        return wallet->Unlock(passOxidase, anonymizeOnly);
+        return wallet->Unlock(passAvantagease, anonymizeOnly);
     }
 }
 

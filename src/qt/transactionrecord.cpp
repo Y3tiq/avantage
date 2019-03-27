@@ -114,7 +114,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
                 sub.credit = txout.nValue;
                 sub.involvesWatchAddress = mine & ISMINE_WATCH_ONLY;
                 if (ExtractDestination(txout.scriptPubKey, address) && IsMine(*wallet, address)) {
-                    // Received by Oxid Address
+                    // Received by Avantage Address
                     sub.type = TransactionRecord::RecvWithAddress;
                     sub.address = CBitcoinAddress(address).ToString();
                     LogPrintf("+++++++ TransactionRecord::decomposeTransaction() sub.address=%s +++++++\n", sub.address);
@@ -175,7 +175,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
                 sub.type = TransactionRecord::Obfuscated;
                 CTxDestination address;
                 if (ExtractDestination(wtx.vout[0].scriptPubKey, address)) {
-                    // Sent to Oxid Address
+                    // Sent to Avantage Address
                     sub.address = CBitcoinAddress(address).ToString();
                     LogPrintf("+++++++ TransactionRecord::decomposeTransaction() sub.address=%s +++++++\n", sub.address);
                 } else {
@@ -222,7 +222,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
 
                 CTxDestination address;
                 if (ExtractDestination(txout.scriptPubKey, address)) {
-                    // Sent to Oxid Address
+                    // Sent to Avantage Address
                     sub.type = TransactionRecord::SendToAddress;
                     sub.address = CBitcoinAddress(address).ToString();
                     LogPrintf("+++++++ TransactionRecord::decomposeTransaction() sub.address=%s +++++++\n", sub.address);

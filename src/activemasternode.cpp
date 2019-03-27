@@ -12,7 +12,7 @@
 #include "spork.h"
 
 //
-// Bootup the Masternode, look for OXID input and register on the network
+// Bootup the Masternode, look for AVN input and register on the network
 //
 void CActiveMasternode::ManageStatus()
 {

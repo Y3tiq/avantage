@@ -168,7 +168,7 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../oxid.qrc"/>
+  <include location="../avantage.qrc"/>
  </resources>
  <connections/>
 </ui>

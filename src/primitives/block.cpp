@@ -135,7 +135,7 @@ void CBlock::print() const
     LogPrintf("%s", ToString());
 }
 
-// oxid: sign block
+// avantage: sign block
 bool CBlock::SignBlock(const CKeyStore& keystore)
 {
     std::vector<valtype> vSolutions;

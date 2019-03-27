@@ -89,7 +89,7 @@ public:
     // network and disk
     std::vector<CTransaction> vtx;
 
-    // oxid: block signature - signed by one of the coin base txout[N]'s owner
+    // avantage: block signature - signed by one of the coin base txout[N]'s owner
     std::vector<unsigned char> vchBlockSig;
 
     // memory only
@@ -139,7 +139,7 @@ public:
         return block;
     }
 
-    // oxid: two types of block: proof-of-work or proof-of-stake
+    // avantage: two types of block: proof-of-work or proof-of-stake
     bool IsProofOfStake() const
     {
         return (vtx.size() > 1 && vtx[1].IsCoinStake());

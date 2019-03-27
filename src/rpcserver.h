@@ -97,7 +97,7 @@ public:
 };
 
 /**
- * Oxid RPC command dispatcher.
+ * Avantage RPC command dispatcher.
  */
 class CRPCTable
 {

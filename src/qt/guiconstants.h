@@ -11,9 +11,9 @@
 static const int MODEL_UPDATE_DELAY = 250;
 
 /* AskPassphraseDialog -- Maximum passphrase length */
-static const int MAX_PASSOXIDASE_SIZE = 1024;
+static const int MAX_PASSAVNASE_SIZE = 1024;
 
-/* Oxid GUI -- Size of icons in status bar */
+/* Avantage GUI -- Size of icons in status bar */
 static const int STATUSBAR_ICONSIZE = 16;
 
 static const bool DEFAULT_SPLASHSCREEN = true;
@@ -48,9 +48,9 @@ static const int MAX_URI_LENGTH = 255;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 35
 
-#define QAPP_ORG_NAME "Oxid"
-#define QAPP_ORG_DOMAIN "oxidproject.net"
-#define QAPP_APP_NAME_DEFAULT "Oxid-Qt"
-#define QAPP_APP_NAME_TESTNET "Oxid-Qt-testnet"
+#define QAPP_ORG_NAME "Avantage"
+#define QAPP_ORG_DOMAIN "avantageproject.net"
+#define QAPP_APP_NAME_DEFAULT "Avantage-Qt"
+#define QAPP_APP_NAME_TESTNET "Avantage-Qt-testnet"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

@@ -19,18 +19,18 @@ BitcoinUnits::BitcoinUnits(QObject* parent) : QAbstractListModel(parent),
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(OXID);
-    unitlist.append(mOXID);
-    unitlist.append(uOXID);
+    unitlist.append(AVN);
+    unitlist.append(mAVN);
+    unitlist.append(uAVN);
     return unitlist;
 }
 
 bool BitcoinUnits::valid(int unit)
 {
     switch (unit) {
-    case OXID:
-    case mOXID:
-    case uOXID:
+    case AVN:
+    case mAVN:
+    case uAVN:
         return true;
     default:
         return false;
@@ -40,12 +40,12 @@ bool BitcoinUnits::valid(int unit)
 QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
-    case OXID:
-        return QString("oxid");
-    case mOXID:
-        return QString("moxid");
-    case uOXID:
-        return QString::fromUtf8("uoxid");
+    case AVN:
+        return QString("avantage");
+    case mAVN:
+        return QString("mavantage");
+    case uAVN:
+        return QString::fromUtf8("uavantage");
     default:
         return QString("???");
     }
@@ -55,23 +55,23 @@ QString BitcoinUnits::name(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case OXID:
-            return QString("OXID");
-        case mOXID:
-            return QString("mOXID");
-        case uOXID:
-            return QString::fromUtf8("μOXID");
+        case AVN:
+            return QString("AVN");
+        case mAVN:
+            return QString("mAVN");
+        case uAVN:
+            return QString::fromUtf8("μAVN");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case OXID:
-            return QString("tOXID");
-        case mOXID:
-            return QString("mtOXID");
-        case uOXID:
-            return QString::fromUtf8("μtOXID");
+        case AVN:
+            return QString("tAVN");
+        case mAVN:
+            return QString("mtAVN");
+        case uAVN:
+            return QString::fromUtf8("μtAVN");
         default:
             return QString("???");
         }
@@ -82,23 +82,23 @@ QString BitcoinUnits::description(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case OXID:
-            return QString("OXID");
-        case mOXID:
-            return QString("Milli-OXID (1 / 1" THIN_SP_UTF8 "000)");
-        case uOXID:
-            return QString("Micro-OXID (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case AVN:
+            return QString("AVN");
+        case mAVN:
+            return QString("Milli-AVN (1 / 1" THIN_SP_UTF8 "000)");
+        case uAVN:
+            return QString("Micro-AVN (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case OXID:
-            return QString("TestOXIDs");
-        case mOXID:
-            return QString("Milli-TestOXID (1 / 1" THIN_SP_UTF8 "000)");
-        case uOXID:
-            return QString("Micro-TestOXID (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case AVN:
+            return QString("TestAVNs");
+        case mAVN:
+            return QString("Milli-TestAVN (1 / 1" THIN_SP_UTF8 "000)");
+        case uAVN:
+            return QString("Micro-TestAVN (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
@@ -108,11 +108,11 @@ QString BitcoinUnits::description(int unit)
 qint64 BitcoinUnits::factor(int unit)
 {
     switch (unit) {
-    case OXID:
+    case AVN:
         return 100000000;
-    case mOXID:
+    case mAVN:
         return 100000;
-    case uOXID:
+    case uAVN:
         return 100;
     default:
         return 100000000;
@@ -122,11 +122,11 @@ qint64 BitcoinUnits::factor(int unit)
 int BitcoinUnits::decimals(int unit)
 {
     switch (unit) {
-    case OXID:
+    case AVN:
         return 8;
-    case mOXID:
+    case mAVN:
         return 5;
-    case uOXID:
+    case uAVN:
         return 2;
     default:
         return 0;

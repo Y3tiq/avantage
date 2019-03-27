@@ -1,0 +1,26 @@
+# /etc/conf.d/avantaged: config file for /etc/init.d/avantaged
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/avantage/avantage.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/avantaged"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/avantaged.pid"
+
+# Where to write avantaged data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/avantaged"
+
+# User and group to own avantaged process
+#BITCOIND_USER="avantage"
+#BITCOIND_GROUP="avantage"
+
+# Path to avantaged executable
+#BITCOIND_BIN="/usr/bin/avantaged"
+
+# Nice value to run avantaged under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

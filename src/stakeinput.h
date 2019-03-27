@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef OXID_STAKEINPUT_H
-#define OXID_STAKEINPUT_H
+#ifndef AVN_STAKEINPUT_H
+#define AVN_STAKEINPUT_H
 
 class CKeyStore;
 class CWallet;
@@ -26,13 +26,13 @@ public:
     virtual CDataStream GetUniqueness() = 0;
 };
 
-class COxidStake : public CStakeInput
+class CAvantageStake : public CStakeInput
 {
 private:
     CTransaction txFrom;
     unsigned int nPosition;
 public:
-    COxidStake()
+    CAvantageStake()
     {
         this->pindexFrom = nullptr;
     }
@@ -49,4 +49,4 @@ public:
 };
 
 
-#endif // OXID_STAKEINPUT_H
+#endif // AVN_STAKEINPUT_H

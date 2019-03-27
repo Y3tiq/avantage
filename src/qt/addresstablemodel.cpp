@@ -346,7 +346,7 @@ void AddressTableModel::updateEntry(const QString& address,
     const QString& purpose,
     int status)
 {
-    // Update address book model from Oxid
+    // Update address book model from Avantage
     priv->updateEntry(address, label, isMine, purpose, status);
 }
 

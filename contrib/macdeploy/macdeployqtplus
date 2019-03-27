@@ -155,7 +155,7 @@ class FrameworkInfo(object):
 class ApplicationBundleInfo(object):
     def __init__(self, path):
         self.path = path
-        appName = "Oxid-Qt"
+        appName = "Avantage-Qt"
         self.binaryPath = os.path.join(path, "Contents", "MacOS", appName)
         if not os.path.exists(self.binaryPath):
             raise RuntimeError("Could not find bundle binary for " + path)
@@ -255,7 +255,7 @@ def runStrip(binaryPath, verbose):
     subprocess.check_call([stripbin, "-x", binaryPath])
 
 def copyFramework(framework, path, verbose):
-    os.system("cp contrib/Frameworks/libboost_system-mt.dylib dist/Oxid-Qt.app/Contents/Frameworks/")
+    os.system("cp contrib/Frameworks/libboost_system-mt.dylib dist/Avantage-Qt.app/Contents/Frameworks/")
     if framework.sourceFilePath.startswith("Qt"):
         #standard place for Nokia Qt installer's frameworks
         fromPath = "/Library/Frameworks/" + framework.sourceFilePath
@@ -605,7 +605,7 @@ else:
 
 # ------------------------------------------------
 
-target = os.path.join("dist", "Oxid-Qt.app")
+target = os.path.join("dist", "Avantage-Qt.app")
 
 if verbose >= 2:
     print("+ Copying source bundle +")

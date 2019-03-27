@@ -47,7 +47,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits)
 {
     int32_t nVersion = 1;
-    const char* pszTimestamp = "Oxid 2.0 - starting a new blockchain";
+    const char* pszTimestamp = "Avantage 2.0 - starting a new blockchain";
     const CScript genesisOutputScript = CScript() << ParseHex("0472db9ee5e9b5e12d60d4661394a37b4d99d527acd95454e0783c7eb43847c803ba95eb7bfc22138680d3641b2b96f186656b7c7362b00afa01a255ff47cef04b") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, 0 * COIN);
 }
@@ -151,7 +151,7 @@ public:
         nToCheckBlockUpgradeMajority = 1008;
         nMinerThreads = 0;
         nTargetTimespan = 120;
-        nTargetSpacing = 120;  // Oxid: 2 minute
+        nTargetSpacing = 120;  // Avantage: 2 minute
         nMaturity = 10;
         nMasternodeCountDrift = 20; // ---
         nMaxMoneyOut = 89000000 * COIN;
@@ -188,14 +188,14 @@ public:
 
         vSeeds.push_back(CDNSSeedData("104.207.132.149", "104.207.132.149"));
         vSeeds.push_back(CDNSSeedData("45.76.247.235", "45.76.247.235"));
-        vSeeds.push_back(CDNSSeedData("seed3.oxid.io", "seed3.oxid.io"));
-        vSeeds.push_back(CDNSSeedData("seed4.oxid.io", "seed4.oxid.io"));
-        vSeeds.push_back(CDNSSeedData("seed5.oxid.io", "seed5.oxid.io"));
-        vSeeds.push_back(CDNSSeedData("seed6.oxid.io", "seed6.oxid.io"));
-        vSeeds.push_back(CDNSSeedData("seed7.oxid.io", "seed7.oxid.io"));
-        vSeeds.push_back(CDNSSeedData("seed8.oxid.io", "seed8.oxid.io"));
-        vSeeds.push_back(CDNSSeedData("seed9.oxid.io", "seed9.oxid.io"));
-        vSeeds.push_back(CDNSSeedData("seed10.oxid.io", "seed10.oxid.io"));
+        vSeeds.push_back(CDNSSeedData("seed3.avantage.io", "seed3.avantage.io"));
+        vSeeds.push_back(CDNSSeedData("seed4.avantage.io", "seed4.avantage.io"));
+        vSeeds.push_back(CDNSSeedData("seed5.avantage.io", "seed5.avantage.io"));
+        vSeeds.push_back(CDNSSeedData("seed6.avantage.io", "seed6.avantage.io"));
+        vSeeds.push_back(CDNSSeedData("seed7.avantage.io", "seed7.avantage.io"));
+        vSeeds.push_back(CDNSSeedData("seed8.avantage.io", "seed8.avantage.io"));
+        vSeeds.push_back(CDNSSeedData("seed9.avantage.io", "seed9.avantage.io"));
+        vSeeds.push_back(CDNSSeedData("seed10.avantage.io", "seed10.avantage.io"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 115); // o
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 29);
@@ -265,8 +265,8 @@ public:
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // Oxid: 1 day
-        nTargetSpacing = 1 * 60;  // Oxid: 1 minute
+        nTargetTimespan = 1 * 60; // Avantage: 1 day
+        nTargetSpacing = 1 * 60;  // Avantage: 1 minute
         nLastPOWBlock = 100;
         nMaturity = 15;
         nModifierUpdateBlock = 0;
@@ -294,14 +294,14 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 177); // Testnet Oxid addresses start with 'x' or 'y'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18);  // Testnet Oxid script addresses start with '8' or '9'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 177); // Testnet Avantage addresses start with 'x' or 'y'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18);  // Testnet Avantage script addresses start with '8' or '9'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 59);      // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
-        // Testnet Oxid BIP32 pubkeys start with 'DRKV'
+        // Testnet Avantage BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Oxid BIP32 prvkeys start with 'DRKP'
+        // Testnet Avantage BIP32 prvkeys start with 'DRKP'
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Oxid BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Avantage BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x01)(0x00)(0x00)(0x80).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
@@ -345,8 +345,8 @@ public:
          nRejectBlockOutdatedMajority = 950;
          nToCheckBlockUpgradeMajority = 1000;
          nMinerThreads = 1;
-         nTargetTimespan = 24 * 60 * 60; // Oxid: 1 day
-         nTargetSpacing = 1 * 60;        // Oxid: 1 minutes
+         nTargetTimespan = 24 * 60 * 60; // Avantage: 1 day
+         nTargetSpacing = 1 * 60;        // Avantage: 1 minutes
          bnProofOfWorkLimit = ~uint256(0) >> 1;
          nDefaultPort = 28944;
 

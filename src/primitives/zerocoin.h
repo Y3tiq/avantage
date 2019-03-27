@@ -2,8 +2,8 @@
 // Copyright (c) 2018 Oxid developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef OXID_ZEROCOIN_H
-#define OXID_ZEROCOIN_H
+#ifndef AVN_ZEROCOIN_H
+#define AVN_ZEROCOIN_H
 
 #include "libzerocoin/Denominations.h"
 #include "libzerocoin/bignum.h"
@@ -190,4 +190,4 @@ public:
     int GetNeededSpends();
 };
 
-#endif //OXID_ZEROCOIN_H
+#endif //AVN_ZEROCOIN_H

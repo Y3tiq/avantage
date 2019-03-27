@@ -15,7 +15,7 @@
 #include "sendcoinsentry.h"
 #include "spork.h"
 #include "walletmodel.h"
-#include "zoxidcontroldialog.h"
+#include "zavantagecontroldialog.h"
 
 #include <QClipboard>
 #include <QSettings>
@@ -30,14 +30,14 @@ PrivacyDialog::PrivacyDialog(QWidget* parent) : QDialog(parent),
     nDisplayUnit = 0; // just make sure it's not unitialized
     ui->setupUi(this);
 
-    // "Spending 999999 zOXID ought to be enough for anybody." - Bill Gates, 2017
-    ui->zOXIDpayAmount->setValidator( new QDoubleValidator(0.0, 21000000.0, 20, this) );
+    // "Spending 999999 zAVN ought to be enough for anybody." - Bill Gates, 2017
+    ui->zAVNpayAmount->setValidator( new QDoubleValidator(0.0, 21000000.0, 20, this) );
     ui->labelMintAmountValue->setValidator( new QIntValidator(0, 999999, this) );
 
     // Default texts for (mini-) coincontrol
     ui->labelCoinControlQuantity->setText (tr("Coins automatically selected"));
     ui->labelCoinControlAmount->setText (tr("Coins automatically selected"));
-    ui->labelzOXIDSyncStatus->setText("(" + tr("out of sync") + ")");
+    ui->labelzAVNSyncStatus->setText("(" + tr("out of sync") + ")");
 
     // Sunken frame for minting messages
     ui->TEMintStatus->setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
@@ -66,7 +66,7 @@ PrivacyDialog::PrivacyDialog(QWidget* parent) : QDialog(parent),
     ui->labelzDenom7Text->setText("Denominations with value <b>1000</b>:");
     ui->labelzDenom8Text->setText("Denominations with value <b>5000</b>:");
 
-    // Oxid settings
+    // Avantage settings
     QSettings settings;
     if (!settings.contains("nSecurityLevel")){
         nSecurityLevel = 42;
@@ -128,11 +128,11 @@ void PrivacyDialog::on_addressBookButton_clicked()
     dlg.setModel(walletModel->getAddressTableModel());
     if (dlg.exec()) {
         ui->payTo->setText(dlg.getReturnValue());
-        ui->zOXIDpayAmount->setFocus();
+        ui->zAVNpayAmount->setFocus();
     }
 }
 
-void PrivacyDialog::on_pushButtonMintzOXID_clicked()
+void PrivacyDialog::on_pushButtonMintzAVN_clicked()
 {
     if (!walletModel || !walletModel->getOptionsModel())
         return;
@@ -160,7 +160,7 @@ void PrivacyDialog::on_pushButtonMintzOXID_clicked()
         return;
     }
 
-    ui->TEMintStatus->setPlainText(tr("Minting ") + ui->labelMintAmountValue->text() + " zOXID...");
+    ui->TEMintStatus->setPlainText(tr("Minting ") + ui->labelMintAmountValue->text() + " zAVN...");
     ui->TEMintStatus->repaint ();
 
     int64_t nTime = GetTimeMillis();
@@ -178,7 +178,7 @@ void PrivacyDialog::on_pushButtonMintzOXID_clicked()
     double fDuration = (double)(GetTimeMillis() - nTime)/1000.0;
 
     // Minting successfully finished. Show some stats for entertainment.
-    QString strStatsHeader = tr("Successfully minted ") + ui->labelMintAmountValue->text() + tr(" zOXID in ") +
+    QString strStatsHeader = tr("Successfully minted ") + ui->labelMintAmountValue->text() + tr(" zAVN in ") +
                              QString::number(fDuration) + tr(" sec. Used denominations:\n");
 
     // Clear amount to avoid double spending when accidentally clicking twice
@@ -237,7 +237,7 @@ void PrivacyDialog::on_pushButtonSpentReset_clicked()
     return;
 }
 
-void PrivacyDialog::on_pushButtonSpendzOXID_clicked()
+void PrivacyDialog::on_pushButtonSpendzAVN_clicked()
 {
 
     if (!walletModel || !walletModel->getOptionsModel() || !pwalletMain)
@@ -251,24 +251,24 @@ void PrivacyDialog::on_pushButtonSpendzOXID_clicked()
             // Unlock wallet was cancelled
             return;
         }
-        // Wallet is unlocked now, sedn zOXID
-        sendzOXID();
+        // Wallet is unlocked now, sedn zAVN
+        sendzAVN();
         return;
     }
-    // Wallet already unlocked or not encrypted at all, send zOXID
-    sendzOXID();
+    // Wallet already unlocked or not encrypted at all, send zAVN
+    sendzAVN();
 }
 
-void PrivacyDialog::on_pushButtonZOxidControl_clicked()
+void PrivacyDialog::on_pushButtonZAvantageControl_clicked()
 {
-    ZOxidControlDialog* zOXIDControl = new ZOxidControlDialog(this);
-    zOXIDControl->setModel(walletModel);
-    zOXIDControl->exec();
+    ZAvantageControlDialog* zAVNControl = new ZAvantageControlDialog(this);
+    zAVNControl->setModel(walletModel);
+    zAVNControl->exec();
 }
 
-void PrivacyDialog::setZOxidControlLabels(int64_t nAmount, int nQuantity)
+void PrivacyDialog::setZAvantageControlLabels(int64_t nAmount, int nQuantity)
 {
-    ui->labelzOXIDSelected_int->setText(QString::number(nAmount));
+    ui->labelzAVNSelected_int->setText(QString::number(nAmount));
     ui->labelQuantitySelected_int->setText(QString::number(nQuantity));
 }
 
@@ -277,7 +277,7 @@ static inline int64_t roundint64(double d)
     return (int64_t)(d > 0 ? d + 0.5 : d - 0.5);
 }
 
-void PrivacyDialog::sendzOXID()
+void PrivacyDialog::sendzAVN()
 {
     QSettings settings;
 
@@ -288,31 +288,31 @@ void PrivacyDialog::sendzOXID()
     }
     else{
         if (!address.IsValid()) {
-            QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Invalid Oxid Address"), QMessageBox::Ok, QMessageBox::Ok);
+            QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Invalid Avantage Address"), QMessageBox::Ok, QMessageBox::Ok);
             ui->payTo->setFocus();
             return;
         }
     }
 
     // Double is allowed now
-    double dAmount = ui->zOXIDpayAmount->text().toDouble();
+    double dAmount = ui->zAVNpayAmount->text().toDouble();
     CAmount nAmount = roundint64(dAmount* COIN);
 
     // Check amount validity
     if (!MoneyRange(nAmount) || nAmount <= 0.0) {
         QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Invalid Send Amount"), QMessageBox::Ok, QMessageBox::Ok);
-        ui->zOXIDpayAmount->setFocus();
+        ui->zAVNpayAmount->setFocus();
         return;
     }
 
-    // Convert change to zOXID
+    // Convert change to zAVN
     bool fMintChange = ui->checkBoxMintChange->isChecked();
 
     // Persist minimize change setting
     fMinimizeChange = ui->checkBoxMinimizeChange->isChecked();
     settings.setValue("fMinimizeChange", fMinimizeChange);
 
-    // Warn for additional fees if amount is not an integer and change as zOXID is requested
+    // Warn for additional fees if amount is not an integer and change as zAVN is requested
     bool fWholeNumber = floor(dAmount) == dAmount;
     double dzFee = 0.0;
 
@@ -321,7 +321,7 @@ void PrivacyDialog::sendzOXID()
 
     if(!fWholeNumber && fMintChange){
         QString strFeeWarning = "You've entered an amount with fractional digits and want the change to be converted to Zerocoin.<br /><br /><b>";
-        strFeeWarning += QString::number(dzFee, 'f', 8) + " OXID </b>will be added to the standard transaction fees!<br />";
+        strFeeWarning += QString::number(dzFee, 'f', 8) + " AVN </b>will be added to the standard transaction fees!<br />";
         QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm additional Fees"),
             strFeeWarning,
             QMessageBox::Yes | QMessageBox::Cancel,
@@ -329,7 +329,7 @@ void PrivacyDialog::sendzOXID()
 
         if (retval != QMessageBox::Yes) {
             // Sending canceled
-            ui->zOXIDpayAmount->setFocus();
+            ui->zAVNpayAmount->setFocus();
             return;
         }
     }
@@ -348,7 +348,7 @@ void PrivacyDialog::sendzOXID()
 
     // General info
     QString strQuestionString = tr("Are you sure you want to send?<br /><br />");
-    QString strAmount = "<b>" + QString::number(dAmount, 'f', 8) + " zOXID</b>";
+    QString strAmount = "<b>" + QString::number(dAmount, 'f', 8) + " zAVN</b>";
     QString strAddress = tr(" to address ") + QString::fromStdString(address.ToString()) + strAddressLabel + " <br />";
 
     if(ui->payTo->text().isEmpty()){
@@ -374,13 +374,13 @@ void PrivacyDialog::sendzOXID()
     ui->TEMintStatus->setPlainText(tr("Spending Zerocoin.\nComputationally expensive, might need several minutes depending on the selected Security Level and your hardware. \nPlease be patient..."));
     ui->TEMintStatus->repaint();
 
-    // use mints from zOXID selector if applicable
+    // use mints from zAVN selector if applicable
     vector<CZerocoinMint> vMintsSelected;
-    if (!ZOxidControlDialog::listSelectedMints.empty()) {
-        vMintsSelected = ZOxidControlDialog::GetSelectedMints();
+    if (!ZAvantageControlDialog::listSelectedMints.empty()) {
+        vMintsSelected = ZAvantageControlDialog::GetSelectedMints();
     }
 
-    // Spend zOXID
+    // Spend zAVN
     CWalletTx wtxNew;
     CZerocoinSpendReceipt receipt;
     bool fSuccess = false;
@@ -396,7 +396,7 @@ void PrivacyDialog::sendzOXID()
     // Display errors during spend
     if (!fSuccess) {
         int nNeededSpends = receipt.GetNeededSpends(); // Number of spends we would need for this transaction
-        const int nMaxSpends = Params().Zerocoin_MaxSpendsPerTransaction(); // Maximum possible spends for one zOXID transaction
+        const int nMaxSpends = Params().Zerocoin_MaxSpendsPerTransaction(); // Maximum possible spends for one zAVN transaction
         if (nNeededSpends > nMaxSpends) {
             QString strStatusMessage = tr("Too much inputs (") + QString::number(nNeededSpends, 10) + tr(") needed. \nMaximum allowed: ") + QString::number(nMaxSpends, 10);
             strStatusMessage += tr("\nEither mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.");
@@ -407,20 +407,20 @@ void PrivacyDialog::sendzOXID()
             QMessageBox::warning(this, tr("Spend Zerocoin"), receipt.GetStatusMessage().c_str(), QMessageBox::Ok, QMessageBox::Ok);
             ui->TEMintStatus->setPlainText(tr("Spend Zerocoin failed with status = ") +QString::number(receipt.GetStatus(), 10) + "\n" + "Message: " + QString::fromStdString(receipt.GetStatusMessage()));
         }
-        ui->zOXIDpayAmount->setFocus();
+        ui->zAVNpayAmount->setFocus();
         ui->TEMintStatus->repaint();
         return;
     }
 
-    // Clear zoxid selector in case it was used
-    ZOxidControlDialog::listSelectedMints.clear();
+    // Clear zavantage selector in case it was used
+    ZAvantageControlDialog::listSelectedMints.clear();
 
     // Some statistics for entertainment
     QString strStats = "";
     CAmount nValueIn = 0;
     int nCount = 0;
     for (CZerocoinSpend spend : receipt.GetSpends()) {
-        strStats += tr("zOXID Spend #: ") + QString::number(nCount) + ", ";
+        strStats += tr("zAVN Spend #: ") + QString::number(nCount) + ", ";
         strStats += tr("denomination: ") + QString::number(spend.GetDenomination()) + ", ";
         strStats += tr("serial: ") + spend.GetSerial().ToString().c_str() + "\n";
         strStats += tr("Spend is 1 of : ") + QString::number(spend.GetMintCount()) + " mints in the accumulator\n";
@@ -429,13 +429,13 @@ void PrivacyDialog::sendzOXID()
 
     CAmount nValueOut = 0;
     for (const CTxOut& txout: wtxNew.vout) {
-        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " Oxid, ";
+        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " Avantage, ";
         nValueOut += txout.nValue;
 
         strStats += tr("address: ");
         CTxDestination dest;
         if(txout.scriptPubKey.IsZerocoinMint())
-            strStats += tr("zOXID Mint");
+            strStats += tr("zAVN Mint");
         else if(ExtractDestination(txout.scriptPubKey, dest))
             strStats += tr(CBitcoinAddress(dest).ToString().c_str());
         strStats += "\n";
@@ -450,7 +450,7 @@ void PrivacyDialog::sendzOXID()
     strReturn += strStats;
 
     // Clear amount to avoid double spending when accidentally clicking twice
-    ui->zOXIDpayAmount->setText ("0");
+    ui->zAVNpayAmount->setText ("0");
 
     ui->TEMintStatus->setPlainText(strReturn);
     ui->TEMintStatus->repaint();
@@ -592,7 +592,7 @@ void PrivacyDialog::setBalance(const CAmount& balance, const CAmount& unconfirme
 
         strDenomStats = strUnconfirmed + QString::number(mapDenomBalances.at(denom)) + " x " +
                         QString::number(nCoins) + " = <b>" +
-                        QString::number(nSumPerCoin) + " zOXID </b>";
+                        QString::number(nSumPerCoin) + " zAVN </b>";
 
         switch (nCoins) {
             case libzerocoin::CoinDenomination::ZQ_ONE:
@@ -630,9 +630,9 @@ void PrivacyDialog::setBalance(const CAmount& balance, const CAmount& unconfirme
         nLockedBalance = walletModel->getLockedBalance();
     }
 
-    ui->labelzAvailableAmount->setText(QString::number(zerocoinBalance/COIN) + QString(" zOXID "));
-    ui->labelzAvailableAmount_2->setText(QString::number(matureZerocoinBalance/COIN) + QString(" zOXID "));
-    ui->labelzOXIDAmountValue->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, balance - immatureBalance - nLockedBalance, false, BitcoinUnits::separatorAlways));
+    ui->labelzAvailableAmount->setText(QString::number(zerocoinBalance/COIN) + QString(" zAVN "));
+    ui->labelzAvailableAmount_2->setText(QString::number(matureZerocoinBalance/COIN) + QString(" zAVN "));
+    ui->labelzAVNAmountValue->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, balance - immatureBalance - nLockedBalance, false, BitcoinUnits::separatorAlways));
 }
 
 void PrivacyDialog::updateDisplayUnit()
@@ -648,7 +648,7 @@ void PrivacyDialog::updateDisplayUnit()
 
 void PrivacyDialog::showOutOfSyncWarning(bool fShow)
 {
-    ui->labelzOXIDSyncStatus->setVisible(fShow);
+    ui->labelzAVNSyncStatus->setVisible(fShow);
 }
 
 void PrivacyDialog::keyPressEvent(QKeyEvent* event)

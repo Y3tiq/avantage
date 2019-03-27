@@ -2,8 +2,8 @@
 // Copyright (c) 2018 Oxid developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef OXID_ACCUMULATORMAP_H
-#define OXID_ACCUMULATORMAP_H
+#ifndef AVN_ACCUMULATORMAP_H
+#define AVN_ACCUMULATORMAP_H
 
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Coin.h"
@@ -21,4 +21,4 @@ public:
     uint256 GetCheckpoint();
     void Reset();
 };
-#endif //OXID_ACCUMULATORMAP_H
+#endif //AVN_ACCUMULATORMAP_H

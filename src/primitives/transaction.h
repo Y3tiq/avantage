@@ -291,7 +291,7 @@ public:
 
     bool IsCoinStake() const
     {
-        // oxid: the coin stake transaction is marked with the first output empty
+        // avantage: the coin stake transaction is marked with the first output empty
         return (vin.size() > 0 && (!vin[0].prevout.IsNull()) && vout.size() >= 2 && vout[0].IsEmpty());
     }
 
@@ -307,7 +307,7 @@ public:
 
     std::string ToString() const;
 
-    bool GetCoinAge(uint64_t& nCoinAge) const;  // oxid: get transaction coin age
+    bool GetCoinAge(uint64_t& nCoinAge) const;  // avantage: get transaction coin age
 };
 
 /** A mutable version of CTransaction. */

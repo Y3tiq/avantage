@@ -1,7 +1,7 @@
-## OXID 2.0
+## AVN 2.0
 
-- Name: Oxid
-- Symbol: OXID
+- Name: Avantage
+- Symbol: AVN
 - Algo: X11
 - Block time: 120 seconds
 - Total coins supply: 89,000,000

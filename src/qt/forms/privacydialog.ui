@@ -54,7 +54,7 @@
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_3">
                <item>
-                <widget class="QLabel" name="labelzOXIDActions">
+                <widget class="QLabel" name="labelzAVNActions">
                  <property name="font">
                   <font>
                    <pointsize>12</pointsize>
@@ -71,9 +71,9 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="labelzOXIDSyncStatus">
+                <widget class="QLabel" name="labelzAVNSyncStatus">
                  <property name="toolTip">
-                  <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Oxid network after a connection is established, but this process has not completed yet.</string>
+                  <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Avantage network after a connection is established, but this process has not completed yet.</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">QLabel { color: red; }</string>
@@ -104,7 +104,7 @@
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_4">
                <item>
-                <widget class="QPushButton" name="pushButtonMintzOXID">
+                <widget class="QPushButton" name="pushButtonMintzAVN">
                  <property name="minimumSize">
                   <size>
                    <width>131</width>
@@ -112,7 +112,7 @@
                   </size>
                  </property>
                  <property name="toolTip">
-                  <string>Enter an amount of Oxid to convert to zOXID</string>
+                  <string>Enter an amount of Avantage to convert to zAVN</string>
                  </property>
                  <property name="text">
                   <string>Mint Zerocoin</string>
@@ -136,9 +136,9 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="labelzOXID_2">
+                <widget class="QLabel" name="labelzAVN_2">
                  <property name="text">
-                  <string>zOXID</string>
+                  <string>zAVN</string>
                  </property>
                 </widget>
                </item>
@@ -156,7 +156,7 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QLabel" name="labelzOXIDAmountText">
+                <widget class="QLabel" name="labelzAVNAmountText">
                  <property name="toolTip">
                   <string>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</string>
                  </property>
@@ -169,12 +169,12 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="labelzOXIDAmountValue">
+                <widget class="QLabel" name="labelzAVNAmountValue">
                  <property name="toolTip">
-                  <string>Enter an amount of Oxid to convert to zOXID</string>
+                  <string>Enter an amount of Avantage to convert to zAVN</string>
                  </property>
                  <property name="text">
-                  <string>0.000 000 00 OXID</string>
+                  <string>0.000 000 00 AVN</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -337,7 +337,7 @@
                     <enum>Qt::ActionsContextMenu</enum>
                    </property>
                    <property name="text">
-                    <string notr="true">0.00 OXID</string>
+                    <string notr="true">0.00 AVN</string>
                    </property>
                    <property name="textInteractionFlags">
                     <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -434,21 +434,21 @@
                 <number>0</number>
                </property>
                <item>
-                <widget class="QPushButton" name="pushButtonZOxidControl">
+                <widget class="QPushButton" name="pushButtonZAvantageControl">
                  <property name="text">
-                  <string>zOXID Control</string>
+                  <string>zAVN Control</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="labelzOXIDSelected">
+                <widget class="QLabel" name="labelzAVNSelected">
                  <property name="text">
-                  <string>zOXID Selected:</string>
+                  <string>zAVN Selected:</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="labelzOXIDSelected_int">
+                <widget class="QLabel" name="labelzAVNSelected_int">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -502,7 +502,7 @@
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_6">
                <item>
-                <widget class="QPushButton" name="pushButtonSpendzOXID">
+                <widget class="QPushButton" name="pushButtonSpendzAVN">
                  <property name="minimumSize">
                   <size>
                    <width>131</width>
@@ -518,9 +518,9 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="labelzOXIDBalanceText">
+                <widget class="QLabel" name="labelzAVNBalanceText">
                  <property name="toolTip">
-                  <string>Available (mature and spendable) zOXID for spending</string>
+                  <string>Available (mature and spendable) zAVN for spending</string>
                  </property>
                  <property name="text">
                   <string>Available Balance:</string>
@@ -539,12 +539,12 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>Available (mature and spendable) zOXID for spending
+                  <string>Available (mature and spendable) zAVN for spending
 
-zOXID are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</string>
+zAVN are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</string>
                  </property>
                  <property name="text">
-                  <string>0 zOXID</string>
+                  <string>0 zAVN</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -655,7 +655,7 @@ zOXID are mature when they have more than 20 confirmations AND more than 2 mints
                     </size>
                    </property>
                    <property name="toolTip">
-                    <string>The Oxid address to send the payment to. Creates local payment to yourself when empty.</string>
+                    <string>The Avantage address to send the payment to. Creates local payment to yourself when empty.</string>
                    </property>
                   </widget>
                  </item>
@@ -668,7 +668,7 @@ zOXID are mature when they have more than 20 confirmations AND more than 2 mints
                     <string/>
                    </property>
                    <property name="icon">
-                    <iconset resource="../oxid.qrc">
+                    <iconset resource="../avantage.qrc">
                      <normaloff>:/icons/address-book</normaloff>:/icons/address-book</iconset>
                    </property>
                    <property name="shortcut">
@@ -685,7 +685,7 @@ zOXID are mature when they have more than 20 confirmations AND more than 2 mints
                     <string/>
                    </property>
                    <property name="icon">
-                    <iconset resource="../oxid.qrc">
+                    <iconset resource="../avantage.qrc">
                      <normaloff>:/icons/editpaste</normaloff>:/icons/editpaste</iconset>
                    </property>
                    <property name="shortcut">
@@ -744,15 +744,15 @@ zOXID are mature when they have more than 20 confirmations AND more than 2 mints
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                  <property name="buddy">
-                  <cstring>zOXIDpayAmount</cstring>
+                  <cstring>zAVNpayAmount</cstring>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="zOXIDpayAmount"/>
+                <widget class="QLineEdit" name="zAVNpayAmount"/>
                </item>
                <item>
-                <widget class="QLabel" name="labelzOXID">
+                <widget class="QLabel" name="labelzAVN">
                  <property name="minimumSize">
                   <size>
                    <width>55</width>
@@ -760,7 +760,7 @@ zOXID are mature when they have more than 20 confirmations AND more than 2 mints
                   </size>
                  </property>
                  <property name="text">
-                  <string>zOXID</string>
+                  <string>zAVN</string>
                  </property>
                 </widget>
                </item>
@@ -853,7 +853,7 @@ zOXID are mature when they have more than 20 confirmations AND more than 2 mints
               <number>4</number>
              </property>
              <item>
-              <widget class="QLabel" name="labelzOXIDStats">
+              <widget class="QLabel" name="labelzAVNStats">
                <property name="font">
                 <font>
                  <pointsize>12</pointsize>
@@ -898,7 +898,7 @@ zOXID are mature when they have more than 20 confirmations AND more than 2 mints
                 </font>
                </property>
                <property name="toolTip">
-                <string>Total Balance including unconfirmed and immature zOXID</string>
+                <string>Total Balance including unconfirmed and immature zAVN</string>
                </property>
                <property name="text">
                 <string>Total Zerocoin  Balance:</string>
@@ -936,10 +936,10 @@ zOXID are mature when they have more than 20 confirmations AND more than 2 mints
                 </font>
                </property>
                <property name="toolTip">
-                <string>Total Balance including unconfirmed and immature zOXID</string>
+                <string>Total Balance including unconfirmed and immature zAVN</string>
                </property>
                <property name="text">
-                <string>0 zOXID</string>
+                <string>0 zAVN</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1392,7 +1392,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../oxid.qrc">:/images/privacylogo</pixmap>
+            <pixmap resource="../avantage.qrc">:/images/privacylogo</pixmap>
            </property>
           </widget>
          </item>
@@ -1476,7 +1476,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
          <enum>Qt::ActionsContextMenu</enum>
         </property>
         <property name="text">
-         <string notr="true">0.000 000 00 OXID</string>
+         <string notr="true">0.000 000 00 AVN</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -1550,7 +1550,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
            <enum>Qt::ActionsContextMenu</enum>
           </property>
           <property name="text">
-           <string notr="true">0.00 OXID</string>
+           <string notr="true">0.00 AVN</string>
           </property>
           <property name="textInteractionFlags">
            <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -1747,7 +1747,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
          <enum>Qt::ActionsContextMenu</enum>
         </property>
         <property name="text">
-         <string notr="true">0.000 000 00 OXID</string>
+         <string notr="true">0.000 000 00 AVN</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -2130,7 +2130,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../oxid.qrc"/>
+  <include location="../avantage.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -79,29 +79,29 @@ enum AvailableCoinsType {
     ALL_COINS = 1,
     ONLY_DENOMINATED = 2,
     ONLY_NOT10000IFMN = 3,
-    ONLY_NONDENOMINATED_NOT10000IFMN = 4, // ONLY_NONDENOMINATED and not 5000 OXID at the same time
+    ONLY_NONDENOMINATED_NOT10000IFMN = 4, // ONLY_NONDENOMINATED and not 5000 AVN at the same time
     ONLY_5000 = 5,                        // find masternode outputs including locked ones (use with caution)
     STAKABLE_COINS = 6                    // UTXO's that are valid for staking
 };
 
-// Possible states for zOXID send
+// Possible states for zAVN send
 enum ZerocoinSpendStatus {
-    ZOXID_SPEND_OKAY = 0,                         // No error
-    ZOXID_SPEND_ERROR = 1,                        // Unspecified class of errors, more details are (hopefully) in the returning text
-    ZOXID_WALLET_LOCKED = 2,                      // Wallet was locked
-    ZOXID_COMMIT_FAILED = 3,                      // Commit failed, reset status
-    ZOXID_ERASE_SPENDS_FAILED = 4,                // Erasing spends during reset failed
-    ZOXID_ERASE_NEW_MINTS_FAILED = 5,             // Erasing new mints during reset failed
-    ZOXID_TRX_FUNDS_PROBLEMS = 6,                 // Everything related to available funds
-    ZOXID_TRX_CREATE = 7,                         // Everything related to create the transaction
-    ZOXID_TRX_CHANGE = 8,                         // Everything related to transaction change
-    ZOXID_TXMINT_GENERAL = 9,                     // General errors in MintToTxIn
-    ZOXID_INVALID_COIN = 10,                      // Selected mint coin is not valid
-    ZOXID_FAILED_ACCUMULATOR_INITIALIZATION = 11, // Failed to initialize witness
-    ZOXID_INVALID_WITNESS = 12,                   // Spend coin transaction did not verify
-    ZOXID_BAD_SERIALIZATION = 13,                 // Transaction verification failed
-    ZOXID_SPENT_USED_ZOXID = 14,                 // Coin has already been spend
-    ZOXID_TX_TOO_LARGE = 15                       // The transaction is larger than the max tx size
+    ZAVN_SPEND_OKAY = 0,                         // No error
+    ZAVN_SPEND_ERROR = 1,                        // Unspecified class of errors, more details are (hopefully) in the returning text
+    ZAVN_WALLET_LOCKED = 2,                      // Wallet was locked
+    ZAVN_COMMIT_FAILED = 3,                      // Commit failed, reset status
+    ZAVN_ERASE_SPENDS_FAILED = 4,                // Erasing spends during reset failed
+    ZAVN_ERASE_NEW_MINTS_FAILED = 5,             // Erasing new mints during reset failed
+    ZAVN_TRX_FUNDS_PROBLEMS = 6,                 // Everything related to available funds
+    ZAVN_TRX_CREATE = 7,                         // Everything related to create the transaction
+    ZAVN_TRX_CHANGE = 8,                         // Everything related to transaction change
+    ZAVN_TXMINT_GENERAL = 9,                     // General errors in MintToTxIn
+    ZAVN_INVALID_COIN = 10,                      // Selected mint coin is not valid
+    ZAVN_FAILED_ACCUMULATOR_INITIALIZATION = 11, // Failed to initialize witness
+    ZAVN_INVALID_WITNESS = 12,                   // Spend coin transaction did not verify
+    ZAVN_BAD_SERIALIZATION = 13,                 // Transaction verification failed
+    ZAVN_SPENT_USED_ZAVN = 14,                 // Coin has already been spend
+    ZAVN_TX_TOO_LARGE = 15                       // The transaction is larger than the max tx size
 };
 
 struct CompactTallyItem {
@@ -206,7 +206,7 @@ public:
     std::string ResetMintZerocoin(bool fExtendedSearch);
     std::string ResetSpentZerocoin();
     void ReconsiderZerocoins(std::list<CZerocoinMint>& listMintsRestored);
-    void ZOxidBackupWallet();
+    void ZAvantageBackupWallet();
 
     /** Zerocin entry changed.
     * @note called with lock cs_wallet held.
@@ -309,7 +309,7 @@ public:
         return false;
     }
 
-    void setZOxidAutoBackups(bool fEnabled)
+    void setZAvantageAutoBackups(bool fEnabled)
     {
         fBackupMints = fEnabled;
     }
@@ -351,7 +351,7 @@ public:
     std::map<CBitcoinAddress, std::vector<COutput> > AvailableCoinsByAddress(bool fConfirmed = true, CAmount maxCoinValue = 0);
     bool SelectCoinsMinConf(const CAmount& nTargetValue, int nConfMine, int nConfTheirs, std::vector<COutput> vCoins, std::set<std::pair<const CWalletTx*, unsigned int> >& setCoinsRet, CAmount& nValueRet) const;
 
-    // Get 5000/25000 OXID output and keys which can be used for the Masternode
+    // Get 5000/25000 AVN output and keys which can be used for the Masternode
     bool GetMasternodeVinAndKeys(CTxIn& txinRet, CPubKey& pubKeyRet, CKey& keyRet, std::string strTxHash = "", std::string strOutputIndex = "");
     // Extract txin information and keys from output
     bool GetVinAndKeysFromOutput(COutput out, CTxIn& txinRet, CPubKey& pubKeyRet, CKey& keyRet);
