@@ -130,8 +130,8 @@ public:
     };
 
     enum collateral : int64_t {
-        MASTERNODE_COLLATERAL = 5000,
-        SUPERNODE_COLLATERAL = 25000
+        MASTERNODE_COLLATERAL = 100000,
+        SUPERNODE_COLLATERAL = 500000
     };
 
     CTxIn vin;

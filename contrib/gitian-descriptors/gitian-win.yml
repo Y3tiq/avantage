@@ -1,5 +1,5 @@
 ---
-name: "avantage-win-3.0"
+name: "avantage-win-1.0"
 enable_cache: true
 suites:
 - "trusty"

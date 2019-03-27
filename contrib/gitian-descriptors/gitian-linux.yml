@@ -1,5 +1,5 @@
 ---
-name: "avantage-linux-3.0"
+name: "avantage-linux-1.0"
 enable_cache: true
 suites:
 - "trusty"

@@ -1,5 +1,5 @@
 ---
-name: "avantage-osx-3.0"
+name: "avantage-osx-1.0"
 enable_cache: true
 suites:
 - "trusty"

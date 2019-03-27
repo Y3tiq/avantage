@@ -1,5 +1,5 @@
 ---
-name: "avantage-aarch64-3.0"
+name: "avantage-aarch64-1.0"
 enable_cache: true
 suites:
 - "xenial"
