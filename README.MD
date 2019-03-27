@@ -1,4 +1,4 @@
-## AVN 2.0
+## Avantage
 
 - Name: Avantage
 - Symbol: AVN
