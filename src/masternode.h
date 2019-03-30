@@ -195,11 +195,11 @@ public:
     }
 
     int64_t GetMasternodeCollateral() {
-        return 5000;
+        return 100000;
     }
 
     int64_t GetSupernodeCollateral() {
-        return 25000;
+        return 500000;
     }
 
     void swap(CMasternode& first, CMasternode& second) // nothrow
