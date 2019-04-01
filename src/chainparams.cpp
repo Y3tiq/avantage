@@ -71,7 +71,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 }
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
-    boost::assign::map_list_of(0, uint256());
+    boost::assign::map_list_of(0, uint256("0x0000980aa3e71d3a636d8afad05ab9067b60f885910d76ca752680f8008e34cc"));
 
     static const Checkpoints::CCheckpointData data = {
         &mapCheckpoints,
@@ -80,7 +80,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
         0};      // * estimated number of transactions per day after checkpoint
 
     static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-        boost::assign::map_list_of(0, uint256());
+        boost::assign::map_list_of(0, uint256("0x0000980aa3e71d3a636d8afad05ab9067b60f885910d76ca752680f8008e34cc"));
     static const Checkpoints::CCheckpointData dataTestnet = {
         &mapCheckpointsTestnet,
         1554145800,
@@ -88,7 +88,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
         0};
 
     static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
-        boost::assign::map_list_of(0, uint256());
+        boost::assign::map_list_of(0, uint256("0x0000980aa3e71d3a636d8afad05ab9067b60f885910d76ca752680f8008e34cc"));
     static const Checkpoints::CCheckpointData dataRegtest = {
         &mapCheckpointsRegtest,
         1554145800,
@@ -140,19 +140,9 @@ public:
         nBlockEnforceSerialRange = 1004;      // Enforce serial range starting this block
         nZerocoinStartTime = 4102444799;      //
 
-        genesis = CreateGenesisBlock(1554145800, 70208, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1554145800, 60807, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
-    	if (true) {
-        	printf("Genesis mining started\n");
-        	genesis.nNonce = 0;
-        	hashGenesisBlock = uint256("0x001");
-        	for(genesis.nNonce = 0; uint256(genesis.GetHash()) > uint256("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); genesis.nNonce++){  }
-        	printf("New genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-        	printf("New genesis nonce: %lu\n", (unsigned long)genesis.nNonce);
-        	printf("New genesis hash: %s\n", genesis.GetHash().ToString().c_str());
-        	printf("Now replace the values, reComment the Genesis mining code and reCompile. \n");
-    	}
-        assert(hashGenesisBlock == uint256("0x0000f1a1258b6e654c817f0953d1519dd1b7a6a91fd3174d89fb7d6c9556401a"));
+        assert(hashGenesisBlock == uint256("0x0000980aa3e71d3a636d8afad05ab9067b60f885910d76ca752680f8008e34cc"));
         assert(genesis.hashMerkleRoot == uint256("0x5f78bd881338a3f875120cc79fecb54a627b3b7a226609640e82bc8ea509ce6d"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23); // A
@@ -230,9 +220,9 @@ public:
         nModifierUpdateBlock = 0;
         nMaxMoneyOut = 400000000 * COIN;
 
-        genesis = CreateGenesisBlock(1554145800, 70208, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1554145800, 60807, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000f1a1258b6e654c817f0953d1519dd1b7a6a91fd3174d89fb7d6c9556401a"));
+        assert(hashGenesisBlock == uint256("0x0000980aa3e71d3a636d8afad05ab9067b60f885910d76ca752680f8008e34cc"));
         assert(genesis.hashMerkleRoot == uint256("0x5f78bd881338a3f875120cc79fecb54a627b3b7a226609640e82bc8ea509ce6d"));
 
         vFixedSeeds.clear();
@@ -293,9 +283,9 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nDefaultPort = 17744;
 
-        genesis = CreateGenesisBlock(1554145800, 67028, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1554145800, 60807, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00008063923741a7f8ac0ed25f15340a9383b5c550ca838629a443eb2be06727"));
+        assert(hashGenesisBlock == uint256("0x0000980aa3e71d3a636d8afad05ab9067b60f885910d76ca752680f8008e34cc"));
         assert(genesis.hashMerkleRoot == uint256("0x5f78bd881338a3f875120cc79fecb54a627b3b7a226609640e82bc8ea509ce6d"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
