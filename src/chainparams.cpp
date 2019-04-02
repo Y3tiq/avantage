@@ -111,11 +111,11 @@ public:
     {
         networkID = CBaseChainParams::MAIN;
         strNetworkID = "main";
-        pchMessageStart[0] = 0xf2;
-        pchMessageStart[1] = 0xa6;
-        pchMessageStart[2] = 0xb3;
-        pchMessageStart[3] = 0x88;
-        vAlertPubKey = ParseHex("040f620f948690e400f340a8f2fc461e8059c7143006657a7be345129cbc4939c6b0fd02ace90dd4c0b2f346cd6c94e81a099d92c4a24818ead06de77a65724b4e");
+        pchMessageStart[0] = 0xc9;
+		pchMessageStart[1] = 0xf6;
+		pchMessageStart[2] = 0xd3;
+		pchMessageStart[3] = 0xa0;
+        vAlertPubKey = ParseHex("04376f3902d3ca6fe15dc8ddf0536b7a9d6e7946cecd8f99b48cec36338446383012d69c339f40317c135f52087ab81760a683c2ec5bf98945f11eab04a705f1be");
         nDefaultPort = 7633;
         bnProofOfWorkLimit = ~uint256(0) >> 20;
         nMaxReorganizationDepth = 100;
@@ -142,8 +142,21 @@ public:
 
         genesis = CreateGenesisBlock(1553690920, 70208, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
+		if (true) {
+        	printf("Genesis mining started\n");
+        	genesis.nNonce = 0;
+        	hashGenesisBlock = uint256("0x001");
+        	for(genesis.nNonce = 0; uint256(genesis.GetHash()) > uint256("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); genesis.nNonce++){  }
+        	printf("New genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
+        	printf("New genesis nonce: %lu\n", (unsigned long)genesis.nNonce);
+        	printf("New genesis hash: %s\n", genesis.GetHash().ToString().c_str());
+        	printf("Now replace the values, reComment the Genesis mining code and reCompile. \n");
+    	}
         assert(hashGenesisBlock == uint256("0x0000f1a1258b6e654c817f0953d1519dd1b7a6a91fd3174d89fb7d6c9556401a"));
         assert(genesis.hashMerkleRoot == uint256("0x5f78bd881338a3f875120cc79fecb54a627b3b7a226609640e82bc8ea509ce6d"));
+		
+		vFixedSeeds.clear();
+        vSeeds.clear();
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23); // A
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 70); // V
@@ -166,7 +179,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "0437ef444fd81f8bc61e3b3f31e9cea3510ee8d450823b28daf6eb076ef641c83899ef288369d11f071f46ce5256d287d2898d195479053b7e4993b9e941b973c0";
+        strSporkKey = "048fe415aa74fc972959190d2ff25467308a5b9160cba6d7a91dd74e4f631ce98cf22fdca4131498f160d39a29dfa64a5793d6b1e2018bc34e481861897f069e41";
         strObfuscationPoolDummyAddress = "";
         nStartMasternodePayments = 1540710800;
 
@@ -203,11 +216,11 @@ public:
     {
         networkID = CBaseChainParams::TESTNET;
         strNetworkID = "test";
-        pchMessageStart[0] = 0xcd;
-        pchMessageStart[1] = 0x89;
-        pchMessageStart[2] = 0xd6;
-        pchMessageStart[3] = 0xfa;
-        vAlertPubKey = ParseHex("04882506f4d311ad396ccc00584d0761b2cbb3db60eab39653991ec6ba59bc6b81a2e945d39b2b5d57eda985d340d29fdb3eb4ed7182871249ac317bb86ab0f048");
+        pchMessageStart[0] = 0x92;
+		pchMessageStart[1] = 0xd4;
+		pchMessageStart[2] = 0xd8;
+		pchMessageStart[3] = 0xba;
+        vAlertPubKey = ParseHex("040a7c502be48518cf78563754b3f4a2f1e6cded4ddede1347476f06c822915620356c146616750543200ba7baa890ee9a882886ea9958f1eae65ceaf1bf6c6ee4");
         nDefaultPort = 17633;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
@@ -249,7 +262,7 @@ public:
         fTestnetToBeDeprecatedFieldRPC = true;
 
         nPoolMaxTransactions = 2;
-        strSporkKey = "04d4619da8fd14f558759a2b3530594df947911ef2cf6fe534e1a5a14b4409bb93c3880c8a24b29c57d12e89d4c7f582d7ab5b7e8b0625346d9cc4653256735d70";
+        strSporkKey = "04fea283868692deebe17f38febbaa51e2bc80adb39c4364e3efb12e4b6fd6c29618f57e18c3a67dfe0626d8259bb076724f22439c6fe02d36a4f2b3db8ca09650";
         strObfuscationPoolDummyAddress = "";
         nStartMasternodePayments = 1540711800;
     }
@@ -270,10 +283,10 @@ public:
     {
         networkID = CBaseChainParams::REGTEST;
         strNetworkID = "regtest";
-        pchMessageStart[0] = 0x9d;
-        pchMessageStart[1] = 0xc8;
-        pchMessageStart[2] = 0xbd;
-        pchMessageStart[3] = 0xb5;
+        pchMessageStart[0] = 0xd9;
+		pchMessageStart[1] = 0x9f;
+		pchMessageStart[2] = 0xf2;
+		pchMessageStart[3] = 0xf6;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
@@ -283,7 +296,7 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nDefaultPort = 17744;
 
-        genesis = CreateGenesisBlock(1553690920, 67028, 0x207fffff);
+        genesis = CreateGenesisBlock(1553690920, 70208, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x00008063923741a7f8ac0ed25f15340a9383b5c550ca838629a443eb2be06727"));
         assert(genesis.hashMerkleRoot == uint256("0x5f78bd881338a3f875120cc79fecb54a627b3b7a226609640e82bc8ea509ce6d"));
