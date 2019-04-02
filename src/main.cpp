@@ -2168,19 +2168,19 @@ int64_t GetBlockValue(int nHeight)
     int64_t nSubsidy = 0;
 
     if (nHeight == 0) {
-        nSubsidy = 2650000 * COIN; // 2.98% premine
-    } else if (nHeight > 0 && nHeight <= SLOW_START_BLOCK) { // 10000
-        nSubsidy = 0.1 * COIN;
+        nSubsidy = 13250000 * COIN;
+    } else if (nHeight > 0 && nHeight <= SLOW_START_BLOCK) { // 1000
+        nSubsidy = 0.5 * COIN;
     } else if (nHeight > SLOW_START_BLOCK && nHeight <= 262800) {
         nSubsidy = MAX_REWARD * COIN;
     } else if (nHeight > 262800 && nHeight <= 525600) {
-        nSubsidy = 8 * COIN;
+        nSubsidy = 40 * COIN;
     } else if (nHeight > 525600 && nHeight <= 788400) {
-        nSubsidy = 6 * COIN;
+        nSubsidy = 30 * COIN;
     } else if (nHeight > 788400) {
-        nSubsidy = 4 * COIN;
+        nSubsidy = 20 * COIN;
     } else {
-        nSubsidy = 0 * COIN;
+        nSubsidy = 1 * COIN;
     }
     return nSubsidy;
 }
