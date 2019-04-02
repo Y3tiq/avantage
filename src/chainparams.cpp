@@ -132,7 +132,7 @@ public:
         nMaxMoneyOut = 400000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 1000;
+        nLastPOWBlock = 10000;
         nModifierUpdateBlock = 0;             // 0
         nBlockRecalculateAccumulators = 1005; // Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 1003;         // First block that bad serials emerged
