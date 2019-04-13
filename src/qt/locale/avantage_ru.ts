@@ -3972,7 +3972,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="+64"/>
         <source>Received</source>
-        <translation><Принято/translation>
+        <translation>Принято</translation>
     </message>
     <message>
         <location line="+80"/>
