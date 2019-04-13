@@ -1,5 +1,6 @@
 <!DOCTYPE RCC><RCC version="1.0">
     <qresource prefix="/translations">
         <file alias="en">locale/avantage_en.qm</file>
+		<file alias="ru">locale/avantage_ru.qm</file>
     </qresource>
 </RCC>

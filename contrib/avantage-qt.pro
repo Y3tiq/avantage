@@ -643,5 +643,6 @@ SOURCES += src/activemasternode.cpp \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.c
 RESOURCES += src/qt/avantage.qrc src/qt/avantage_locale.qrc
 
-TRANSLATIONS += src/qt/locale/avantage_en.ts
+TRANSLATIONS += src/qt/locale/avantage_en.ts \
+				src/qt/locale/avantage_ru.ts
 

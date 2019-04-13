@@ -3,7 +3,8 @@ EXTRA_LIBRARIES += qt/libbitcoinqt.a
 
 # avantage qt core #
 QT_TS = \
-  qt/locale/avantage_en.ts
+  qt/locale/avantage_en.ts \
+  qt/locale/avantage_ru.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
