@@ -233,6 +233,7 @@
         <location line="+0"/>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR AVN&lt;/b&gt;!</source>
         <translation>Внимание: если вы зашифруете свой кошелёк и потеряете от него пароль, то вы &lt;b&gt;ПОТЕРЯЕТЕ ВСЕ СВОИ AVN&lt;/b&gt;!</translation>
+	</message>
     <message>
         <location line="+6"/>
         <location line="+45"/>
