@@ -1810,7 +1810,7 @@ Address: %4
     </message>
     <message>
         <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see "MISSING" in "Status" field.</source>
-        <translation>Note: Статус ваших мастер-узлов в локальном кошельке может быть немного неправильным. & Lt; br / & gt; Всегда ждите, пока кошелек не синхронизирует дополнительные данные, а затем дважды проверьте другой узел & lt; br / & gt; если ваш узел должен работать, но вы все равно видите " ПРОПУСК »в поле« Статус ».</translation>
+        <translation>Note: Статус ваших мастер-узлов в локальном кошельке может быть немного неправильным.&lt;br /&gt;Всегда ждите, пока кошелек не синхронизирует дополнительные данные, а затем дважды проверьте другой узел&lt;br /&gt;если ваш узел должен работать, но вы все равно видите "ПРОПУСК" в поле "Cтатус".</translation>
     </message>
     <message>
         <source>Alias</source>
