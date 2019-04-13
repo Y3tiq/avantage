@@ -1902,7 +1902,7 @@ Address: %4
     </message>
     <message>
         <source>Command is not available right now</source>
-        <translation>Команда сейчас недоступна<</translation>
+        <translation>Команда сейчас недоступна</translation>
     </message>
     <message>
         <source>You can't use this command until masternode list is synced</source>
