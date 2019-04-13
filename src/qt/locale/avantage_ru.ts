@@ -1973,7 +1973,7 @@ MultiSend будет неактивен до тех пор, пока вы не �
     <message>
         <location line="+13"/>
         <source>Choose an address from the address book</source>
-        <translation>Выберите адрес из адресной книги<</translation>
+        <translation>Выберите адрес из адресной книги</translation>
     </message>
     <message>
         <location line="+10"/>
