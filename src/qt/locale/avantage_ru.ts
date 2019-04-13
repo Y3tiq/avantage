@@ -1108,7 +1108,7 @@ Address: %4
     <message>
         <location line="+14"/>
         <source>Forward</source>
-        <translation>Вперед<</translation>
+        <translation>Вперед</translation>
     </message>
     <message>
         <location line="+29"/>
