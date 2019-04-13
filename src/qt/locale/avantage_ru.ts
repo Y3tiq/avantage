@@ -2023,7 +2023,7 @@ MultiSend будет неактивен до тех пор, пока вы не �
     <message>
         <location line="+16"/>
         <source>View MultiSend Vector</source>
-        <translation>Просмотр MultiSend<</translation>
+        <translation>Просмотр MultiSend</translation>
     </message>
     <message>
         <location line="+3"/>
