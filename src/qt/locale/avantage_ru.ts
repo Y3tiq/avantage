@@ -2028,7 +2028,7 @@ MultiSend будет неактивен до тех пор, пока вы не �
     <message>
         <location line="+3"/>
         <source>View MultiSend</source>
-        <translation>Просмотр MultiSend<</translation>
+        <translation>Просмотр MultiSend</translation>
     </message>
     <message>
         <location line="+16"/>
@@ -5124,7 +5124,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="+14"/>
         <source>Reset all verify message fields</source>
-        <translation>Сбросить все поля подтверждения<</translation>
+        <translation>Сбросить все поля подтверждения</translation>
     </message>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+30"/>
@@ -5384,7 +5384,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="-58"/>
         <source>label</source>
-        <translation>метка<</translation>
+        <translation>метка</translation>
     </message>
     <message>
         <location line="+32"/>
@@ -5469,7 +5469,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="+7"/>
         <source>Debug information</source>
-        <translation>Отладочная информация<</translation>
+        <translation>Отладочная информация</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -5479,7 +5479,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="+3"/>
         <source>Inputs</source>
-        <translation>входы<</translation>
+        <translation>входы</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -5522,7 +5522,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="+0"/>
         <source>Type</source>
-        <translation>Тип<</translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -5769,7 +5769,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="+1"/>
         <source>Sent to</source>
-        <translation>Отправить<</translation>
+        <translation>Отправить</translation>
     </message>
     <message>
         <location line="+1"/>
