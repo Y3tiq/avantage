@@ -2184,7 +2184,7 @@ Please be patient after clicking import.</source>
     <message>
         <location line="-7"/>
         <source>Amount:</source>
-        <translatio>Сумма:</translation>
+        <translation>Сумма:</translation>
     </message>
     <message>
         <location line="+22"/>
