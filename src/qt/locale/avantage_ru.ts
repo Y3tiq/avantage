@@ -1085,7 +1085,7 @@ Address: %4
     <message>
         <location line="+10"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonimization and staking only</source>
-        <translation>Кошелек & lt; b & gt; зашифрован & lt; / b & gt; и в настоящее время & lt; b & gt; разблокирован & lt; / b & gt; только для анонимизации и в участие доли</translation>
+        <translation>Кошелек &lt;b&gt;зашифрован&lt;/b&gt; и в настоящее время &lt;b&gt;разблокирован&lt;/b&gt; только для анонимизации и в участие доли</translation>
     </message>
     <message>
         <location line="+10"/>
