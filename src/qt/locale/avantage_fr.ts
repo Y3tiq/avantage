@@ -366,7 +366,7 @@
     <message>
         <location line=" 3"/>
         <source>Encrypt &amp;Key</source>
-        <translation> Chiffrer &amp;la clé/translation>
+        <translation> Chiffrer &amp;la clé</translation>
     </message>
     <message>
         <location line=" 14"/>
