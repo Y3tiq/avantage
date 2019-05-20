@@ -2994,7 +2994,7 @@ Para habilitar el cambio de AutoMint &apos;enablezeromint=0&apos; a &apos; enabl
     <message>
         <location line=" 114"/>
         <source>URI cannot be parsed! This can be caused by an invalid Avantage address or malformed URI parameters.</source>
-        ¡<translation> URI no puede ser analizado! Esto puede ser causado por una dirección Avantage no válida o por parámetros URI mal formados.. </translation>
+        <translation> URI no puede ser analizado! Esto puede ser causado por una dirección Avantage no válida o por parámetros URI mal formados.. </translation>
     </message>
     <message>
         <location line=" 13"/>
