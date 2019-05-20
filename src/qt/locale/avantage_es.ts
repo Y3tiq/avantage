@@ -1113,7 +1113,7 @@ Dirección: %4
     <message>
         <location line=" 29"/>
         <source>Address / Block / Transaction</source>
-        <translation> Dirección / Bloque / Transacción </ fuente</translation>
+        <translation> Dirección / Bloque / Transacción</translation>
     </message>
     <message>
         <location line=" 25"/>
