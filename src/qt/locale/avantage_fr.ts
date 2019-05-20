@@ -233,6 +233,7 @@
         <location line=" 0"/>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR AVN&lt;/b&gt;!</source>
         <translation> l'Attention : si vous chiffrez la bourse et perdrez de lui le mot de passe, vous &lt;b&gt;ПОТЕРЯЕТЕ TOUT AVN&lt;/b&gt;!</translation>
+	</message>
     <message>
         <location line=" 6"/>
         <location line=" 45"/>
