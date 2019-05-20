@@ -387,7 +387,7 @@
     <message>
         <location line=" 6"/>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking &apos;Import Address&apos; will add this private key to the wallet.</source>
-        <translation> Introduzca la clave privada cifrada BIP 38. Ingrese la contraseña en el cuadro central. Haga clic en Descifrar clave para calcular la clave privada. Después de descifrar la clave, haga clic en & apos; Importar dirección & apos; agregará esta clave privada a la billetera. </translation>
+        <translation> Introduzca la clave privada cifrada BIP 38. Ingrese la contraseña en el cuadro central. Haga clic en Descifrar clave para calcular la clave privada. Después de descifrar la clave, haga clic en &apos; Importar dirección &apos; agregará esta clave privada a la billetera. </translation>
     </message>
     <message>
         <location line=" 25"/>
@@ -1784,7 +1784,7 @@ Dirección: %4
     <message>
         <location line=" 1"/>
         <source>You can&apos;t use this command until masternode list is synced</source>
-        <translation> No puedes & apos; usar este comando hasta que la lista masternode esté sincronizada </translation>
+        <translation> No puedes &apos; usar este comando hasta que la lista masternode esté sincronizada </translation>
     </message>
     <message>
         <location line=" 6"/>
@@ -3450,7 +3450,7 @@ Inmaduro: confirmado, pero menos de 2 mints de la misma denominación después d
     <message>
         <location line=" 106"/>
         <source>Note: This hidden objects are used for communication between the &apos;Coin Control&apos; dialog and its parent objects. We don&apos;t want to change/reimplement the existing Coin Control, so this objects must be here, even when we don&apos;t use them. No, we don&apos;t like this approach, either.</source>
-        <translation>Nota: estos objetos ocultos se utilizan para la comunicación entre & apos;Control de monedas y apos;diálogo y sus objetos padres.No queremos &apos;cambiar / reimplementar el control de monedas existente,por lo tanto, estos objetos deben estar aquí, incluso cuando no&apos; los usamos&apos;No, tampoco nos&apos; gusta este enfoque.</translation>
+        <translation>Nota: estos objetos ocultos se utilizan para la comunicación entre &apos;Control de monedas y apos;diálogo y sus objetos padres.No queremos &apos;cambiar / reimplementar el control de monedas existente,por lo tanto, estos objetos deben estar aquí, incluso cuando no&apos; los usamos&apos;No, tampoco nos&apos; gusta este enfoque.</translation>
     </message>
     <message>
 	<location line=" 100"/>
@@ -3631,7 +3631,7 @@ Máximo permitido:</translation>
     <message>
         <location line=" 64"/>
         <source>No &apos;Pay To&apos; address provided, creating local payment</source>
-        <translation>No &apos; Pagar a & apos; Dirección proporcionada, creando pago local.</translation>
+        <translation>No &apos; Pagar a &apos; Dirección proporcionada, creando pago local.</translation>
     </message>
     <message>
 	<location line=" 4"/>
