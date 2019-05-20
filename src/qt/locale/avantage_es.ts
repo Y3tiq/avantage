@@ -6100,7 +6100,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line=" 6"/>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
-        <translation>Distribuido bajo la licencia de software MIT, consulte la copia del archivo adjunto o &lt; http://www.opensource.org/licenses/mit-license.php&gt ;.</translation>
+        <translation>Distribuido bajo la licencia de software MIT, consulte la copia del archivo adjunto o &lt; http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
         <location line=" 8"/>
