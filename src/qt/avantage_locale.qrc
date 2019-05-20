@@ -2,5 +2,7 @@
     <qresource prefix="/translations">
         <file alias="en">locale/avantage_en.qm</file>
 		<file alias="ru">locale/avantage_ru.qm</file>
+		<file alias="ru">locale/avantage_es.qm</file>
+		<file alias="ru">locale/avantage_fr.qm</file>
     </qresource>
 </RCC>

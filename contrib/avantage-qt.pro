@@ -644,5 +644,7 @@ SOURCES += src/activemasternode.cpp \
 RESOURCES += src/qt/avantage.qrc src/qt/avantage_locale.qrc
 
 TRANSLATIONS += src/qt/locale/avantage_en.ts \
-				src/qt/locale/avantage_ru.ts
+				src/qt/locale/avantage_ru.ts \
+				src/qt/locale/avantage_es.ts \
+				src/qt/locale/avantage_fr.ts
 
