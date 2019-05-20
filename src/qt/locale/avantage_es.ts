@@ -2438,7 +2438,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line=" 18"/>
         <source>Size of &amp;database cache</source>
-        <translation> Tamaño de & amp; caché de base de datos </translation>
+        <translation> Tamaño de &amp; caché de base de datos </translation>
     </message>
     <message>
         <location line=" 16"/>
