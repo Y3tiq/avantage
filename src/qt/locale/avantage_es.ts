@@ -422,7 +422,7 @@
     <message>
         <location filename="../bip38tooldialog.cpp" line=" 31"/>
         <source>Click &quot;Decrypt Key&quot; to compute key</source>
-        <translation> Haga clic en & quot; Descifrar clave & quot; para calcular la clave </translation>
+        <translation> Haga clic en &quot; Descifrar clave &quot; para calcular la clave </translation>
     </message>
     <message>
         <location line=" 90"/>
@@ -1325,7 +1325,7 @@ Dirección: %4
     <message>
         <location line=" 163"/>
         <source>Please switch to &quot;List mode&quot; to use this function.</source>
-        <translation>Por favor, cambie a & quot; Modo de lista & quot; para utilizar esta función. </translation>
+        <translation>Por favor, cambie a &quot; Modo de lista &quot; para utilizar esta función. </translation>
     </message>
     <message>
         <location line=" 220"/>
@@ -1423,7 +1423,7 @@ Dirección: %4
     <message>
         <location line=" 1"/>
         <source>This label turns red, if the priority is smaller than &quot;medium&quot;.</source>
-        <translation> Esta etiqueta se vuelve roja, si la prioridad es menor que & quot; medio & quot ;. </translation>
+        <translation> Esta etiqueta se vuelve roja, si la prioridad es menor que &quot; medio & quot ;. </translation>
     </message>
     <message>
         <location line=" 3"/>
@@ -1497,12 +1497,12 @@ Dirección: %4
     <message>
 	<location line=" 67"/>
         <source>The entered address &quot;%1&quot; is not a valid Avantage address.</source>
-        <translation> La dirección ingresada & quot;% 1 & quot; no es una dirección Avantage válida. </translation>
+        <translation> La dirección ingresada &quot;% 1 &quot; no es una dirección Avantage válida. </translation>
     </message>
     <message>
         <location line=" 5"/>
         <source>The entered address &quot;%1&quot; is already in the address book.</source>
-        <translation> La dirección ingresada & quot;% 1 & quot; Ya está en la libreta de direcciones. </translation>
+        <translation> La dirección ingresada &quot;% 1 &quot; Ya está en la libreta de direcciones. </translation>
     </message>
     <message>
         <location line=" 5"/>
@@ -1599,7 +1599,7 @@ Dirección: %4
     <message>
         <location line="-3"/>
         <source>Set language, for example &quot;de_DE&quot; (default: system locale)</source>
-        <translation> Establecer idioma, por ejemplo & quot; de_DE & quot; (predeterminado: configuración regional del sistema) </translation>
+        <translation> Establecer idioma, por ejemplo &quot; de_DE &quot; (predeterminado: configuración regional del sistema) </translation>
     </message>
     <message>
         <location line=" 1"/>
@@ -1652,7 +1652,7 @@ Dirección: %4
     <message>
         <location line=" 1"/>
         <source>Error: Specified data directory &quot;%1&quot; cannot be created.</source>
-        <translation> Error: directorio de datos especificados & quot;% 1 & quot; no se puede crear. </translation>
+        <translation> Error: directorio de datos especificados &quot;% 1 &quot; no se puede crear. </translation>
     </message>
     <message>
         <location line=" 24"/>
@@ -1684,7 +1684,7 @@ Dirección: %4
     </message>
     <message>
         <location line=" 16"/>
-        <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see &quot;MISSING&quot; in &quot;Status&quot; field.</source>Nota: el estado de sus masternodes en la billetera local puede ser ligeramente incorrecto. & Lt; br / & gt; Siempre espere a que la billetera sincronice los datos adicionales y luego vuelva a verificar desde otro nodo & lt; br / & gt; si su nodo debería estar en ejecución, pero aún así ver & quot; FALTA & quot; en & quot; Estado & quot; campo. </translation>
+        <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see &quot;MISSING&quot; in &quot;Status&quot; field.</source>Nota: el estado de sus masternodes en la billetera local puede ser ligeramente incorrecto. & Lt; br / & gt; Siempre espere a que la billetera sincronice los datos adicionales y luego vuelva a verificar desde otro nodo & lt; br / & gt; si su nodo debería estar en ejecución, pero aún así ver &quot; FALTA &quot; en &quot; Estado &quot; campo. </translation>
     </message>
     <message>
         <location line=" 74"/>
