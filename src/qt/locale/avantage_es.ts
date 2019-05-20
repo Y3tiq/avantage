@@ -1684,7 +1684,8 @@ Dirección: %4
     </message>
     <message>
         <location line=" 16"/>
-        <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see &quot;MISSING&quot; in &quot;Status&quot; field.</source>Nota: el estado de sus masternodes en la billetera local puede ser ligeramente incorrecto. & Lt; br / & gt; Siempre espere a que la billetera sincronice los datos adicionales y luego vuelva a verificar desde otro nodo & lt; br / & gt; si su nodo debería estar en ejecución, pero aún así ver &quot; FALTA &quot; en &quot; Estado &quot; campo. </translation>
+        <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see &quot;MISSING&quot; in &quot;Status&quot; field.</source>
+		<translation>Nota: el estado de sus masternodes en la billetera local puede ser ligeramente incorrecto. &lt;br /&gt; Siempre espere a que la billetera sincronice los datos adicionales y luego vuelva a verificar desde otro nodo &lt;br /&gt; si su nodo debería estar en ejecución, pero aún así ver &quot; FALTA &quot; en &quot; Estado &quot; campo. </translation>
     </message>
     <message>
         <location line=" 74"/>
@@ -1809,7 +1810,7 @@ Dirección: %4
     </message>
     <message>
         <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see "MISSING" in "Status" field.</source>
-        <translation> Nota: el estado de sus masternodes en la billetera local puede ser ligeramente incorrecto. & Lt; br / & gt; Siempre espere a que la billetera sincronice los datos adicionales y luego vuelva a verificar desde otro nodo & lt; br / & gt; si su nodo debería estar en ejecución, pero aún así  "FALTA" consulte en el campo de "Estado". </translation>
+        <translation> Nota: el estado de sus masternodes en la billetera local puede ser ligeramente incorrecto. &lt;br /&gt; Siempre espere a que la billetera sincronice los datos adicionales y luego vuelva a verificar desde otro nodo &lt;br /&gt; si su nodo debería estar en ejecución, pero aún así  "FALTA" consulte en el campo de "Estado". </translation>
     </message>
     <message>
         <source>Alias</source>
