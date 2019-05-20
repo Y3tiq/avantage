@@ -1423,7 +1423,7 @@ Dirección: %4
     <message>
         <location line=" 1"/>
         <source>This label turns red, if the priority is smaller than &quot;medium&quot;.</source>
-        <translation> Esta etiqueta se vuelve roja, si la prioridad es menor que &quot; medio & quot ;. </translation>
+        <translation> Esta etiqueta se vuelve roja, si la prioridad es menor que &quot; medio &quot;. </translation>
     </message>
     <message>
         <location line=" 3"/>
