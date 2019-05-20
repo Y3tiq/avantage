@@ -177,7 +177,7 @@
     <message>
         <location filename="../askpassphrasedialog.cpp" line=" 44"/>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation> Ingrese la nueva contraseña en la billetera. &Lt;br/&gt; Utilice una frase secreta de &lt;b&gt; diez o más caracteres aleatorios &lt;/b& gt ;, o &lt;b&gt; ocho o más palabras & lt; / b & gt ;.. </translation>
+        <translation> Ingrese la nueva contraseña en la billetera. &lt;br/&gt; Utilice una frase secreta de &lt;b&gt; diez o más caracteres aleatorios &lt;/b&gt;, o &lt;b&gt; ocho o más palabras&lt;/b&gt;. </translation>
     </message>
 	<message>
         <location line=" 3"/>
@@ -2462,7 +2462,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line=" 32"/>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
-        <translation> Si desactiva el gasto de un cambio no confirmado, el cambio de una transacción &lt;br/&gt; no se puede usar hasta que esa transacción tenga al menos una confirmación. &Lt;br/&gt; Esto también afecta la forma en que se calcula su saldo. </translation>
+        <translation> Si desactiva el gasto de un cambio no confirmado, el cambio de una transacción &lt;br/&gt; no se puede usar hasta que esa transacción tenga al menos una confirmación. &lt;br/&gt; Esto también afecta la forma en que se calcula su saldo. </translation>
     </message>
     <message>
         <location line=" 33"/>
