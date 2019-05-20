@@ -1080,17 +1080,17 @@ Dirección: %4
     <message>
 	<location line=" 30"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
-        <translation> La billetera está & lt; b & gt; cifrada & lt; / b & gt; y actualmente & esta; b & gt; desbloqueada & lt; / b & gt;</translation>
+        <translation> La billetera está &lt;b&gt; cifrada &lt;/b&gt; y actualmente & esta; b & gt; desbloqueada &lt;/b&gt;</translation>
     </message>
     <message>
         <location line=" 10"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonimization and staking only</source>
-        <translation> La billetera está & lt; b & gt; cifrada & lt; / b & gt; y actualmente & lt; b & gt; desbloqueada & lt; / b & gt; sólo para anonimización y estaking </translation>
+        <translation> La billetera está &lt;b&gt; cifrada &lt;/b&gt; y actualmente &lt;b&gt; desbloqueada &lt;/b&gt; sólo para anonimización y estaking </translation>
     </message>
     <message>
         <location line=" 10"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
-        <translation> La billetera está & lt; b & gt; cifrada & lt; / b & gt; y actualmente & lt; b & gt; bloqueada & lt; / b & gt;</translation>
+        <translation> La billetera está &lt;b&gt; cifrada &lt;/b&gt; y actualmente &lt;b&gt; bloqueada &lt;/b&gt;</translation>
     </message>
 </context>
 <context>
