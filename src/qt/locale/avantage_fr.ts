@@ -1108,7 +1108,7 @@ Address: %4
     <message>
         <location line=" 14"/>
         <source>Forward</source>
-        <translation> En avant <</translation>
+        <translation> En avant </translation>
     </message>
     <message>
         <location line=" 29"/>
@@ -1902,7 +1902,7 @@ Address: %4
     </message>
     <message>
         <source>Command is not available right now</source>
-        <translation> l'Équipe est inaccessible maintenant <</translation>
+        <translation> l'Équipe est inaccessible maintenant </translation>
     </message>
     <message>
         <source>You can't use this command until masternode list is synced</source>
@@ -1973,7 +1973,7 @@ MultiSend sera inactif jusqu'à ce que vous n'appuierez pas Insérer </translati
     <message>
         <location line=" 13"/>
         <source>Choose an address from the address book</source>
-        <translation> Choisissez l'adresse de l'annuaire <</translation>
+        <translation> Choisissez l'adresse de l'annuaire </translation>
     </message>
     <message>
         <location line=" 10"/>
@@ -2023,12 +2023,12 @@ MultiSend sera inactif jusqu'à ce que vous n'appuierez pas Insérer </translati
     <message>
         <location line=" 16"/>
         <source>View MultiSend Vector</source>
-        <translation> l'Affichage MultiSend <</translation>
+        <translation> l'Affichage MultiSend </translation>
     </message>
     <message>
         <location line=" 3"/>
         <source>View MultiSend</source>
-        <translation> l'Affichage MultiSend <</translation>
+        <translation> l'Affichage MultiSend </translation>
     </message>
     <message>
         <location line=" 16"/>
@@ -5124,7 +5124,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line=" 14"/>
         <source>Reset all verify message fields</source>
-        <translation> Enlever tous les champs de la confirmation <</translation>
+        <translation> Enlever tous les champs de la confirmation </translation>
     </message>
     <message>
 	<location filename="../signverifymessagedialog.cpp" line=" 30"/>
@@ -5384,7 +5384,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="-58"/>
         <source>label</source>
-        <translation> la marque <</translation>
+        <translation> la marque </translation>
     </message>
     <message>
         <location line=" 32"/>
@@ -5469,7 +5469,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
 	<location line=" 7"/>
         <source>Debug information</source>
-        <translation> l'information De réglage <</translation>
+        <translation> l'information De réglage </translation>
     </message>
     <message>
         <location line=" 8"/>
@@ -5479,7 +5479,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line=" 3"/>
         <source>Inputs</source>
-        <translation> les entrées <</translation>
+        <translation> les entrées </translation>
     </message>
     <message>
         <location line=" 17"/>
@@ -5522,7 +5522,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line=" 0"/>
         <source>Type</source>
-        <translation>le type<</translation>
+        <translation>le type</translation>
     </message>
     <message>
         <location line=" 0"/>
@@ -5769,7 +5769,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line=" 1"/>
         <source>Sent to</source>
-        <translation> Expédier <</translation>
+        <translation> Expédier </translation>
     </message>
     <message>
         <location line=" 1"/>
