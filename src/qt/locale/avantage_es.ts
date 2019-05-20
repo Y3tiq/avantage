@@ -2453,7 +2453,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line=" 13"/>
         <source>(0 = auto, &lt;0 = leave that many cores free)</source>
-        <translation> (0 = auto, & lt; 0 = deja muchos núcleos libres)</translation>
+        <translation> (0 = auto, &lt; 0 = deja muchos núcleos libres)</translation>
     </message>
     <message>
         <location line=" 102"/>
@@ -6100,7 +6100,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line=" 6"/>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
-        <translation>Distribuido bajo la licencia de software MIT, consulte la copia del archivo adjunto o & lt; http://www.opensource.org/licenses/mit-license.php&gt ;.</translation>
+        <translation>Distribuido bajo la licencia de software MIT, consulte la copia del archivo adjunto o &lt; http://www.opensource.org/licenses/mit-license.php&gt ;.</translation>
     </message>
     <message>
         <location line=" 8"/>
