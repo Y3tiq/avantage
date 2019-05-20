@@ -1408,7 +1408,7 @@ Address: %4
         <location line=" 1"/>
         <location line=" 5"/>
         <source>This means a fee of at least %1 per kB is required.</source>
-        <translation> cela signifie que la commission dans le montant au minimum %1 pour kB </translation> est nécessaire
+        <translation> cela signifie que la commission dans le montant au minimum %1 pour kB est nécessaire</translation>
     </message>
     <message>
         <location line="-4"/>
