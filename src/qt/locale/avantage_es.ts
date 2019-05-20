@@ -227,7 +227,7 @@
     <message>
         <location line="-8"/>
         <source>Are you sure you wish to encrypt your wallet?</source>
-        ¿<translation> ¿Estás seguro que deseas encriptar tu billetera? </translation>
+        <translation> ¿Estás seguro que deseas encriptar tu billetera? </translation>
     </message>
     <message>
         <location line=" 0"/>
@@ -2705,7 +2705,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="-30"/>
         <source>Client will be shutdown, do you want to proceed?</source>
-        ¿<translation> El cliente se cerrará, ¿quieres continuar? </translation>
+        <translation> El cliente se cerrará, ¿quieres continuar? </translation>
     </message>
     <message>
         <location line=" 32"/>
