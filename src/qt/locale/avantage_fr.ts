@@ -2184,7 +2184,7 @@ S'il vous plaît, soyez patients après la pression de l'importation. </translat
     <message>
         <location line="-7"/>
         <source>Amount:</source>
-        <translatio> la Somme : </translation>
+        <translation> la Somme : </translation>
     </message>
     <message>
         <location line=" 22"/>
