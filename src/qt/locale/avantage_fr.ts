@@ -2635,7 +2635,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line=" 11"/>
         <source>Decimal digits</source>
-        <translation> Décimal razryadnost'/translation>
+        <translation> Décimal razryadnost'</translation>
     </message>
     <message>
 	<location line=" 14"/>
