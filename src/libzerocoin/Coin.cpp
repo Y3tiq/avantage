@@ -10,7 +10,7 @@
  * @license    This project is released under the MIT license.
  **/
 
-// Copyright (c) 2018 Oxid developers
+// Copyright (c) 2019 Avantage developers
 #include "Coin.h"
 #include "Commitment.h"
 #include "Denominations.h"

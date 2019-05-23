@@ -1,6 +1,6 @@
 /* @flow */
 // Copyright (c) 2012-2014 The Dash developers
-// Copyright (c) 2018 Oxid developers
+// Copyright (c) 2019 Avantage developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
