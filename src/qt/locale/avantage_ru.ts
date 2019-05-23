@@ -2781,7 +2781,7 @@ p, li { white-space: pre-wrap; }
         <location line="+807"/>
         <location line="+255"/>
         <source>Total:</source>
-        <translation>Total:</translation>
+        <translation>Всего:</translation>
     </message>
     <message>
         <location line="-1001"/>
@@ -2915,13 +2915,13 @@ Immature: confirmed, but less than 3 mints of the same denomination after it was
     <message>
         <location line="+127"/>
         <source>Recent transactions</source>
-        <translation>Recent transactions</translation>
+        <translation>Недавние транзакции</translation>
     </message>
     <message>
         <location filename="../overviewpage.cpp" line="+135"/>
         <location line="+1"/>
         <source>out of sync</source>
-        <translation>out of sync</translation>
+        <translation>не синх.</translation>
     </message>
     <message>
         <location line="+93"/>
@@ -7463,37 +7463,37 @@ for example: alertnotify=echo %%s | mail -s &quot;Avantage Alert&quot; admin@foo
     <message>
         <location line="+2"/>
         <source>Synchronization failed</source>
-        <translation type="unfinished">Synchronization failed</translation>
+        <translation type="unfinished">Ошибка синхронизации</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Synchronization finished</source>
-        <translation type="unfinished">Synchronization finished</translation>
+        <translation type="unfinished">Синхронизация выполнена</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Synchronization pending...</source>
-        <translation type="unfinished">Synchronization pending...</translation>
+        <translation type="unfinished">Ожидание синхронизации...</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Synchronizing budgets...</source>
-        <translation type="unfinished">Synchronizing budgets...</translation>
+        <translation type="unfinished">Синхронизация бюджета...</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Synchronizing masternode winners...</source>
-        <translation type="unfinished">Synchronizing masternode winners...</translation>
+        <translation type="unfinished">Синхронизация победителей мастернод...</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Synchronizing masternodes...</source>
-        <translation type="unfinished">Synchronizing masternodes...</translation>
+        <translation type="unfinished">Синхронизация мастернод...</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Synchronizing sporks...</source>
-        <translation type="unfinished">Synchronizing sporks...</translation>
+        <translation type="unfinished">Синхронизация спорков...</translation>
     </message>
     <message>
         <location line="+1"/>
