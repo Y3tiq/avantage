@@ -2232,6 +2232,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, unsigned mnTier)
             ret = blockValue * 0.4; // 30= 12 + 12 + 6
         } else  {
             ret = blockValue * 0.4;
+		}
     } else if (nHeight > 15000 && nHeight <= 20000) {
         if (mnTier == CMasternode::nodeTier::SUPERNODE) {
             ret = blockValue * 0.4; // 40 = 16 + 16 + 8
