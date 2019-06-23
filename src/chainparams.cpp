@@ -49,7 +49,7 @@ static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits
 {
     int32_t nVersion = 1;
     const char* pszTimestamp = "Those who cannot change their minds cannot change anything";
-    const CScript genesisOutputScript = CScript() << ParseHex("0406c82b219cd93205007a01c193416c840b1e1134173c6261e5c9dca4e6ca78a188460cf4c67dd9dbec449cb5511b067b71c28424c40462095acf31ce31282e1b") << OP_CHECKSIG;
+    const CScript genesisOutputScript = CScript() << ParseHex("045fad4b07455672878121630ec6e05266c9516c0a3e6ba2315ca4583c3d0e68cbfc9f13aed5062ef06ce601a58fff2a6571176bb4197684f1dd9abcd693427a52") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, 100 * COIN);
 }
 
@@ -72,37 +72,27 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-	(0, uint256("00007c53c2d79e066757eb97ae1db3da406a2d636342614f7edbb04e7fdb82cb"))
-	(1000, uint256("000006848ceb534e7d80e187658b0a4dbe161f19d77784247df5b43af435856e"))
-	(2000, uint256("000003b3614aaa1b85ae10fa07e7f1e695e3bfb8ec99fb83c9ac13811b545764"))
-	(3000, uint256("000003c8cf0c35a65e8e9c586ca3798466badef36f3939e61a4f016af7f57ff3"))
-	(4000, uint256("000002f461a4b6d5c3ccc7ce62be56c4fd6cd69246d6e871b0614653cb1ce935"))
-	(5000, uint256("0000093bf9f44b48d8414d29894a3f984f65999dd0d878fbe5c21d03dd338e4a"))
-	(6000, uint256("00000a2c65eb43e6cd74549ff390f9c1e92fb33550466997f28cda62dd18fba7"))
-	(7000, uint256("000009c77bbfec6ab0ce50534fe131f25a8bd0bcb58444e6a2a0c658afd328d5"))
-	(8000, uint256("00000d7c1c13d5bf28607a2942deedc3288a14f90944e199126913cd0dcc8fe3"))
-	(9000, uint256("00000307068b4c7628582dd3df58f487f2cd9598ed8e3c3228521f5f44f42a20"))
-	(10000, uint256("00000ab9dc0cd7f13cbf83667cdc05fe6a2ecaece43de6724424cc28be8a2279")); // last PoW block
+	(0, uint256("0x00"));
 
     static const Checkpoints::CCheckpointData data = {
         &mapCheckpoints,
-        1554203700, // * UNIX timestamp of last checkpoint block
+        1561282410, // * UNIX timestamp of last checkpoint block
         10034,     		// * total number of transactions between genesis and last checkpoint (the tx=... number in the SetBestChain debug.log lines)
         1000};      // * estimated number of transactions per day after checkpoint
 
     static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-        boost::assign::map_list_of(0, uint256("00007c53c2d79e066757eb97ae1db3da406a2d636342614f7edbb04e7fdb82cb"));
+        boost::assign::map_list_of(0, uint256("0x00"));
     static const Checkpoints::CCheckpointData dataTestnet = {
         &mapCheckpointsTestnet,
-        1554203700,
+        1561282410,
         0,
         0};
 
     static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
-        boost::assign::map_list_of(0, uint256("00007c53c2d79e066757eb97ae1db3da406a2d636342614f7edbb04e7fdb82cb"));
+        boost::assign::map_list_of(0, uint256("0x00"));
     static const Checkpoints::CCheckpointData dataRegtest = {
         &mapCheckpointsRegtest,
-        1554203700,
+        1561282410,
         0,
         0};
 
@@ -151,14 +141,20 @@ public:
         nBlockEnforceSerialRange = 1004;      // Enforce serial range starting this block
         nZerocoinStartTime = 4102444799;      //
 
-        genesis = CreateGenesisBlock(1554203700, 24618, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1561282410, 24618, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
+    	if (true) {
+        	printf("Genesis mining started\n");
+        	genesis.nNonce = 0;
+        	hashGenesisBlock = uint256S("0x001");
+        	for(genesis.nNonce = 0; uint256S(genesis.GetHash()) > uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); genesis.nNonce++){  }
+        	printf("New genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
+        	printf("New genesis nonce: %lu\n", (unsigned long)genesis.nNonce);
+        	printf("New genesis hash: %s\n", genesis.GetHash().ToString().c_str());
+        	printf("Now replace the values, reComment the Genesis mining code and reCompile. \n");
+    	}
         assert(hashGenesisBlock == uint256("0x00007c53c2d79e066757eb97ae1db3da406a2d636342614f7edbb04e7fdb82cb"));
         assert(genesis.hashMerkleRoot == uint256("0x5f78bd881338a3f875120cc79fecb54a627b3b7a226609640e82bc8ea509ce6d"));
-		
-		vSeeds.push_back(CDNSSeedData("176.223.134.220", "176.223.134.220"));
-		vSeeds.push_back(CDNSSeedData("194.135.92.207", "194.135.92.207"));
-		vSeeds.push_back(CDNSSeedData("185.69.54.141", "185.69.54.141"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23); // A
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 70); // V
@@ -235,7 +231,7 @@ public:
         nModifierUpdateBlock = 0;
         nMaxMoneyOut = 400000000 * COIN;
 
-        genesis = CreateGenesisBlock(1554203700, 24618, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1561282410, 24618, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x00007c53c2d79e066757eb97ae1db3da406a2d636342614f7edbb04e7fdb82cb"));
         assert(genesis.hashMerkleRoot == uint256("0x5f78bd881338a3f875120cc79fecb54a627b3b7a226609640e82bc8ea509ce6d"));
@@ -298,7 +294,7 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nDefaultPort = 17744;
 
-        genesis = CreateGenesisBlock(1554203700, 24618, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1561282410, 24618, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x00007c53c2d79e066757eb97ae1db3da406a2d636342614f7edbb04e7fdb82cb"));
         assert(genesis.hashMerkleRoot == uint256("0x5f78bd881338a3f875120cc79fecb54a627b3b7a226609640e82bc8ea509ce6d"));

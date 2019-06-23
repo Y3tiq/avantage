@@ -2166,23 +2166,36 @@ double ConvertBitsToDouble(unsigned int nBits)
 int64_t GetBlockValue(int nHeight)
 {
     int64_t nSubsidy = 0;
-
-    if (nHeight == 0) {
-        nSubsidy = 13250000 * COIN;
-    } else if (nHeight > 0 && nHeight <= SLOW_START_BLOCK) { // 1000
-        nSubsidy = 0.5 * COIN;
-    } else if (nHeight > SLOW_START_BLOCK && nHeight <= 262800) {
+	if (nHeight == 0) {
+		nSubsidy = 225000000 * COIN;
+    } else if (nHeight > 0 && nHeight <= SLOW_START_BLOCK) { // 100
+        nSubsidy = 50 * COIN;
+    } else if (nHeight > SLOW_START_BLOCK && nHeight <= 5000) {
         nSubsidy = MAX_REWARD * COIN;
-    } else if (nHeight > 262800 && nHeight <= 525600) {
-        nSubsidy = 40 * COIN;
-    } else if (nHeight > 525600 && nHeight <= 788400) {
-        nSubsidy = 30 * COIN;
-    } else if (nHeight > 788400) {
+    } else if (nHeight > 5000 && nHeight <= 10000) {
+        nSubsidy = 28.3 * COIN;
+    } else if (nHeight > 10000 && nHeight <= 15000) {
+        nSubsidy = 20 * COIN;
+    } else if (nHeight > 10000 && nHeight <= 15000) {
+        nSubsidy = 15.6 * COIN;
+    } else if (nHeight > 20000 && nHeight <= 25000) {
+        nSubsidy = 16 * COIN;
+    } else if (nHeight > 25000 && nHeight <= 30000) {
+        nSubsidy = 16.5 * COIN;
+    } else if (nHeight > 30000 && nHeight <= 35000) {
+        nSubsidy = 17 * COIN;
+    } else if (nHeight > 35000 && nHeight <= 40000) {
+        nSubsidy = 17.5 * COIN;
+    } else if (nHeight > 40000 && nHeight <= 45000) {
+        nSubsidy = 18 * COIN;
+    } else if (nHeight > 45000 && nHeight <= 50000) {
+        nSubsidy = 18.6 * COIN;
+    } else if (nHeight > 50000) {
         nSubsidy = 20 * COIN;
     } else {
         nSubsidy = 1 * COIN;
-    }
-    return nSubsidy;
+	}
+	return nSubsidy;
 }
 
 /**
@@ -2194,36 +2207,70 @@ int64_t GetBlockValue(int nHeight)
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue, unsigned mnTier)
 {
     int64_t ret = 0;
-
     if (nHeight == 0) {
         ret = 0;
     } else if (nHeight > 0 && nHeight <= SLOW_START_BLOCK) {
         if (mnTier == CMasternode::nodeTier::SUPERNODE) {
-            ret = blockValue * 0.4; // 0.1 = 0.04 + 0.04 + 0.02
+            ret = blockValue * 0.4; // 0.5 = 0.2 + 0.2 + 0.1
         } else  {
             ret = blockValue * 0.4;
         }
-    } else if (nHeight > SLOW_START_BLOCK && nHeight <= 262800) {
+    } else if (nHeight > SLOW_START_BLOCK && nHeight <= 5000) {
         if (mnTier == CMasternode::nodeTier::SUPERNODE) {
-            ret = blockValue * 0.4; // 10 = 4 + 4 + 2
+            ret = blockValue * 0.4; // 50 = 20 + 20+ 10
         } else  {
             ret = blockValue * 0.4;
         }
-    } else if (nHeight > 262800 && nHeight <= 525600) {
+    } else if (nHeight > 5000 && nHeight <= 10000) {
         if (mnTier == CMasternode::nodeTier::SUPERNODE) {
-            ret = blockValue * 0.4; // 8 = 3.2 + 3.2 + 1.6
+            ret = blockValue * 0.4; // 40 = 16 + 16 + 8
         } else  {
             ret = blockValue * 0.4;
         }
-    } else if (nHeight > 525600 && nHeight <= 788400) {
+    } else if (nHeight > 10000 && nHeight <= 15000) {
         if (mnTier == CMasternode::nodeTier::SUPERNODE) {
-            ret = blockValue * 0.4; // 6 = 2.4 + 2.4 + 1.2
+            ret = blockValue * 0.4; // 30= 12 + 12 + 6
+        } else  {
+            ret = blockValue * 0.4;
+    } else if (nHeight > 15000 && nHeight <= 20000) {
+        if (mnTier == CMasternode::nodeTier::SUPERNODE) {
+            ret = blockValue * 0.4; // 40 = 16 + 16 + 8
         } else  {
             ret = blockValue * 0.4;
         }
-    } else if (nHeight > 788400) {
+    } else if (nHeight > 20000 && nHeight <= 25000) {
         if (mnTier == CMasternode::nodeTier::SUPERNODE) {
-            ret = blockValue * 0.4; // 4 = 1.6 + 1.6 + 0.8
+            ret = blockValue * 0.4; // 40 = 16 + 16 + 8
+        } else  {
+            ret = blockValue * 0.4;
+        }
+    } else if (nHeight > 25000 && nHeight <= 30000) {
+        if (mnTier == CMasternode::nodeTier::SUPERNODE) {
+            ret = blockValue * 0.4; // 40 = 16 + 16 + 8
+        } else  {
+            ret = blockValue * 0.4;
+        }
+    } else if (nHeight > 30000 && nHeight <= 35000) {
+        if (mnTier == CMasternode::nodeTier::SUPERNODE) {
+            ret = blockValue * 0.4; // 40 = 16 + 16 + 8
+        } else  {
+            ret = blockValue * 0.4;
+        }
+    } else if (nHeight > 35000 && nHeight <= 40000) {
+        if (mnTier == CMasternode::nodeTier::SUPERNODE) {
+            ret = blockValue * 0.4; // 40 = 16 + 16 + 8
+        } else  {
+            ret = blockValue * 0.4;
+        }
+    } else if (nHeight > 45000 && nHeight <= 50000) {
+        if (mnTier == CMasternode::nodeTier::SUPERNODE) {
+            ret = blockValue * 0.4; // 40 = 16 + 16 + 8
+        } else  {
+            ret = blockValue * 0.4;
+        }
+    } else if (nHeight > 50000) {
+        if (mnTier == CMasternode::nodeTier::SUPERNODE) {
+            ret = blockValue * 0.4; // 20 = 8 + 8 + 4
         } else  {
             ret = blockValue * 0.4;
         }
