@@ -76,7 +76,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
 
     static const Checkpoints::CCheckpointData data = {
         &mapCheckpoints,
-        1561385620, // * UNIX timestamp of last checkpoint block
+        1561390560, // * UNIX timestamp of last checkpoint block
         0,     		// * total number of transactions between genesis and last checkpoint (the tx=... number in the SetBestChain debug.log lines)
         100};      // * estimated number of transactions per day after checkpoint
 
@@ -84,7 +84,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of(0, uint256("0x0000059dc63dd231594b01cd1b93d06dd6881c3169065dfd36d27aecf40fb7f9"));
     static const Checkpoints::CCheckpointData dataTestnet = {
         &mapCheckpointsTestnet,
-        1561385620,
+        1561390560,
         0,
         0};
 
@@ -92,7 +92,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of(0, uint256("0x0000059dc63dd231594b01cd1b93d06dd6881c3169065dfd36d27aecf40fb7f9"));
     static const Checkpoints::CCheckpointData dataRegtest = {
         &mapCheckpointsRegtest,
-        1561385620,
+        1561390560,
         0,
         0};
 
@@ -141,7 +141,7 @@ public:
         nBlockEnforceSerialRange = 1004;      // Enforce serial range starting this block
         nZerocoinStartTime = 4102444799;      //
 
-        genesis = CreateGenesisBlock(1561385620, 81055, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1561390560, 81055, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
     	if (true) {
         	printf("Genesis mining started\n");
@@ -231,7 +231,7 @@ public:
         nModifierUpdateBlock = 0;
         nMaxMoneyOut = 400000000 * COIN;
 
-        genesis = CreateGenesisBlock(1561385620, 81055, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1561390560, 81055, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x0000059dc63dd231594b01cd1b93d06dd6881c3169065dfd36d27aecf40fb7f9"));
         assert(genesis.hashMerkleRoot == uint256("0x631df2cf1b2b8e21655689c53ae5f3997c3d0967fe2d1d8af1cbcd407566534e"));
@@ -294,7 +294,7 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nDefaultPort = 17744;
 
-        genesis = CreateGenesisBlock(1561385620, 81055, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1561390560, 81055, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x0000059dc63dd231594b01cd1b93d06dd6881c3169065dfd36d27aecf40fb7f9"));
         assert(genesis.hashMerkleRoot == uint256("0x631df2cf1b2b8e21655689c53ae5f3997c3d0967fe2d1d8af1cbcd407566534e"));
