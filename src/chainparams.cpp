@@ -50,7 +50,7 @@ static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits
     int32_t nVersion = 1;
     const char* pszTimestamp = "Those who cannot change their minds cannot change anything";
     const CScript genesisOutputScript = CScript() << ParseHex("04d87e7367e949d93341c1b7fe7a79a399ef8ed67cf1ed4d0b824a00c73a786b7678d54d3a5ffe73d6f4d11296e744ba6cfa1c6f10cd66da1caeec8e8914ff8406") << OP_CHECKSIG;
-    return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, 20 * COIN);
+    return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, 0 * COIN);
 }
 
 /**
