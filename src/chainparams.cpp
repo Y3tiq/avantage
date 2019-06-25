@@ -72,27 +72,27 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-	(0, uint256("0x000020e4d30a9155da5806d893a8042a53b67797655e0d1d2e2ba332b39b1b14"));
+	(0, uint256("0x00"));
 
     static const Checkpoints::CCheckpointData data = {
         &mapCheckpoints,
-        1561390560, // * UNIX timestamp of last checkpoint block
+        1561467840, // * UNIX timestamp of last checkpoint block
         0,     		// * total number of transactions between genesis and last checkpoint (the tx=... number in the SetBestChain debug.log lines)
         100};      // * estimated number of transactions per day after checkpoint
 
     static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-        boost::assign::map_list_of(0, uint256("0x000020e4d30a9155da5806d893a8042a53b67797655e0d1d2e2ba332b39b1b14"));
+        boost::assign::map_list_of(0, uint256("0x00"));
     static const Checkpoints::CCheckpointData dataTestnet = {
         &mapCheckpointsTestnet,
-        1561390560,
+        1561467840,
         0,
         0};
 
     static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
-        boost::assign::map_list_of(0, uint256("0x000020e4d30a9155da5806d893a8042a53b67797655e0d1d2e2ba332b39b1b14"));
+        boost::assign::map_list_of(0, uint256("0x00"));
     static const Checkpoints::CCheckpointData dataRegtest = {
         &mapCheckpointsRegtest,
-        1561390560,
+        1561467840,
         0,
         0};
 
@@ -141,7 +141,7 @@ public:
         nBlockEnforceSerialRange = 1004;      // Enforce serial range starting this block
         nZerocoinStartTime = 4102444799;      //
 
-        genesis = CreateGenesisBlock(1561390560, 36440, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1561467840, 36440, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
 		if (true) {
         	printf("Genesis mining started\n");
@@ -178,7 +178,7 @@ public:
 
         nPoolMaxTransactions = 3;
         strSporkKey = "048fe415aa74fc972959190d2ff25467308a5b9160cba6d7a91dd74e4f631ce98cf22fdca4131498f160d39a29dfa64a5793d6b1e2018bc34e481861897f069e41";
-        strObfuscationPoolDummyAddress = "AcCrAG8HebPX5iVgwou9GSBzdhMzZeyAWd";
+        strObfuscationPoolDummyAddress = "";
         nStartMasternodePayments = 1540710800;
 
         zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
@@ -231,7 +231,7 @@ public:
         nModifierUpdateBlock = 0;
         nMaxMoneyOut = 400000000 * COIN;
 
-        genesis = CreateGenesisBlock(1561390560, 36440, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1561467840, 36440, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x000020e4d30a9155da5806d893a8042a53b67797655e0d1d2e2ba332b39b1b14"));
         assert(genesis.hashMerkleRoot == uint256("0x2a8b52e461ee29ff8d6112218e89999ebaec432a2259f9ccce2328d71b9c8eaf"));
@@ -261,7 +261,7 @@ public:
 
         nPoolMaxTransactions = 2;
         strSporkKey = "04fea283868692deebe17f38febbaa51e2bc80adb39c4364e3efb12e4b6fd6c29618f57e18c3a67dfe0626d8259bb076724f22439c6fe02d36a4f2b3db8ca09650";
-        strObfuscationPoolDummyAddress = "AcCrAG8HebPX5iVgwou9GSBzdhMzZeyAWd";
+        strObfuscationPoolDummyAddress = "";
         nStartMasternodePayments = 1540711800;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
@@ -294,7 +294,7 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nDefaultPort = 17744;
 
-        genesis = CreateGenesisBlock(1561390560, 36440, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1561467840, 36440, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x000020e4d30a9155da5806d893a8042a53b67797655e0d1d2e2ba332b39b1b14"));
         assert(genesis.hashMerkleRoot == uint256("0x2a8b52e461ee29ff8d6112218e89999ebaec432a2259f9ccce2328d71b9c8eaf"));
