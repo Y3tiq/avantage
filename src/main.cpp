@@ -2176,7 +2176,7 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 28.3 * COIN;
     } else if (nHeight > 10000 && nHeight <= 15000) {
         nSubsidy = 20 * COIN;
-    } else if (nHeight > 10000 && nHeight <= 15000) {
+    } else if (nHeight > 15000 && nHeight <= 20000) {
         nSubsidy = 15.6 * COIN;
     } else if (nHeight > 20000 && nHeight <= 25000) {
         nSubsidy = 16 * COIN;
@@ -2263,18 +2263,24 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, unsigned mnTier)
         } else  {
             ret = blockValue * 0.4;
         }
-    } else if (nHeight > 45000 && nHeight <= 50000) {
+    } else if (nHeight > 40000 && nHeight <= 45000) {
         if (mnTier == CMasternode::nodeTier::SUPERNODE) {
             ret = blockValue * 0.4; // 40 = 16 + 16 + 8
         } else  {
             ret = blockValue * 0.4;
         }
-    } else if (nHeight > 50000) {
+    } else if (nHeight > 45000 && nHeight <= 50000) {
         if (mnTier == CMasternode::nodeTier::SUPERNODE) {
             ret = blockValue * 0.4; // 20 = 8 + 8 + 4
         } else  {
             ret = blockValue * 0.4;
         }
+	} else if (nHeight > 50000) {
+        if (mnTier == CMasternode::nodeTier::SUPERNODE) {
+            ret = blockValue * 0.4; // 20 = 8 + 8 + 4
+        } else  {
+            ret = blockValue * 0.4;
+        }	
     } else {
         if (mnTier == CMasternode::nodeTier::SUPERNODE) {
             ret = blockValue * 0.4; // 0 = 0 + 0 + 0
