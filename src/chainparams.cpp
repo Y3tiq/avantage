@@ -141,7 +141,9 @@ public:
         nBlockEnforceSerialRange = 1004;      // Enforce serial range starting this block
         nZerocoinStartTime = 4102444799;      //
 
-    	/*if (true) {
+        genesis = CreateGenesisBlock(1561390560, 36440, 0x1f00ffff);
+        hashGenesisBlock = genesis.GetHash();
+		if (true) {
         	printf("Genesis mining started\n");
         	genesis.nNonce = 0;
         	hashGenesisBlock = uint256("0x001");
@@ -150,9 +152,7 @@ public:
         	printf("New genesis nonce: %lu\n", (unsigned long)genesis.nNonce);
         	printf("New genesis hash: %s\n", genesis.GetHash().ToString().c_str());
         	printf("Now replace the values, reComment the Genesis mining code and reCompile. \n");
-    	}*/
-        genesis = CreateGenesisBlock(1561390560, 36440, 0x1f00ffff);
-        hashGenesisBlock = genesis.GetHash();
+    	}
         assert(hashGenesisBlock == uint256("0x000020e4d30a9155da5806d893a8042a53b67797655e0d1d2e2ba332b39b1b14"));
         assert(genesis.hashMerkleRoot == uint256("0x2a8b52e461ee29ff8d6112218e89999ebaec432a2259f9ccce2328d71b9c8eaf"));
 
