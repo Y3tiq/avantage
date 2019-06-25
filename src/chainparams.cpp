@@ -168,7 +168,7 @@ public:
 
         nPoolMaxTransactions = 3;
         strSporkKey = "048fe415aa74fc972959190d2ff25467308a5b9160cba6d7a91dd74e4f631ce98cf22fdca4131498f160d39a29dfa64a5793d6b1e2018bc34e481861897f069e41";
-        strObfuscationPoolDummyAddress = "";
+        strObfuscationPoolDummyAddress = "AJ41jtcdGPueq8wgF3hQyN4bkiPYBy44UE";
         nStartMasternodePayments = 1540710800;
 
         zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
@@ -251,7 +251,7 @@ public:
 
         nPoolMaxTransactions = 2;
         strSporkKey = "04fea283868692deebe17f38febbaa51e2bc80adb39c4364e3efb12e4b6fd6c29618f57e18c3a67dfe0626d8259bb076724f22439c6fe02d36a4f2b3db8ca09650";
-        strObfuscationPoolDummyAddress = "";
+        strObfuscationPoolDummyAddress = "AJ41jtcdGPueq8wgF3hQyN4bkiPYBy44UE";
         nStartMasternodePayments = 1540711800;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
