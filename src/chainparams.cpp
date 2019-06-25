@@ -124,8 +124,8 @@ public:
         nRejectBlockOutdatedMajority = 1007;
         nToCheckBlockUpgradeMajority = 1008;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 24 * 60 * 60; // Avantage: 3.5 days
-        nTargetSpacing = 5 * 60;        // Avantage: 2.5 minutes
+        nTargetTimespan = 24 * 60 * 60;
+        nTargetSpacing = 1 * 60;
         nMaturity = 10;
         nMasternodeCountDrift = 20; // ---
         nMaxMoneyOut = 400000000 * COIN;
@@ -224,8 +224,8 @@ public:
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 24 * 60 * 60; // Avantage: 3.5 days
-        nTargetSpacing = 5 * 60;        // Avantage: 2.5 minutes
+        nTargetTimespan = 24 * 60 * 60;
+        nTargetSpacing = 1 * 60;
         nLastPOWBlock = 100;
         nMaturity = 10;
         nModifierUpdateBlock = 0;
@@ -289,8 +289,8 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 1 * 24 * 60 * 60; // Avantage: 3.5 days
-        nTargetSpacing = 5 * 60;        // Avantage: 2.5 minutes
+        nTargetTimespan = 24 * 60 * 60;
+        nTargetSpacing = 1 * 60;
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nDefaultPort = 17744;
 
