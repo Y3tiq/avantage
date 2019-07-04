@@ -927,7 +927,7 @@
     <message numerus="yes">
         <location line="+212"/>
         <source>%n active connection(s) to Avantage network</source>
-        <translation">%n активных подключений к сети AVN</translation>
+        <translation>%n активных подключений к сети AVN</translation>
     </message>
     <message>
         <location line="+15"/>
