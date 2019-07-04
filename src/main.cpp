@@ -2460,8 +2460,8 @@ bool CScriptCheck::operator()()
     return true;
 }
 
-CBitcoinAddress addressExp1("of8RvDg9aZTL2tJ56HxBh98JSCNVR4ZaAW");
-CBitcoinAddress addressExp2("ofBjAcpYyhUWK1vZexBZXtAmGGsXrs39Vx");
+CBitcoinAddress addressExp1("AJFBEzJvaFjioF9DMQAzsJLASnGV6fCNKY");
+CBitcoinAddress addressExp2("AQKS2Eu6bqrfgXMU2DsXbR71157jLkx24j");
 
 map<COutPoint, COutPoint> mapInvalidOutPoints;
 map<CBigNum, CAmount> mapInvalidSerials;
