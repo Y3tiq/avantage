@@ -927,10 +927,7 @@
     <message numerus="yes">
         <location line="+212"/>
         <source>%n active connection(s) to Avantage network</source>
-        <translation type="unfinished">
-            <numerusform>%n активных подключений к сети AVN</numerusform>
-            <numerusform>%n активных подключений к сети AVN</numerusform>
-        </translation>
+        <translation">%n активных подключений к сети AVN</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1063,13 +1060,13 @@ Address: %4
         <location line="+0"/>
         <location line="+4"/>
         <source>Active</source>
-        <translation type="unfinished"></translation>
+        <translation>Активен</translation>
     </message>
     <message>
         <location line="-4"/>
         <location line="+4"/>
         <source>Not Active</source>
-        <translation>Активно</translation>
+        <translation>Не активен</translation>
     </message>
     <message>
         <location line="+0"/>
