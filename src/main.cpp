@@ -2168,7 +2168,7 @@ int64_t GetBlockValue(int nHeight)
     int64_t nSubsidy = 0;
 	if (nHeight == 0) {
 		nSubsidy = 230000000 * COIN;
-    } else if (nHeight > 0 && nHeight <= SLOW_START_BLOCK) { // 19200
+    } else if (nHeight > 0 && nHeight <= SLOW_START_BLOCK) { // 10000
         nSubsidy = 20 * COIN;
     } else if (nHeight > SLOW_START_BLOCK && nHeight <= 701265) {
         nSubsidy = MAX_REWARD * COIN;
