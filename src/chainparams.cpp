@@ -147,7 +147,7 @@ public:
         	printf("Genesis mining started\n");
         	genesis.nNonce = 0;
         	hashGenesisBlock = uint256S("0x001");
-        	for(genesis.nNonce = 0; uint256S(genesis.GetHash()) > uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); genesis.nNonce++){  }
+        	for(genesis.nNonce = 0; UintToArith256(genesis.GetHash()) > UintToArith256("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); genesis.nNonce++){  }
         	printf("New genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
         	printf("New genesis nonce: %lu\n", (unsigned long)genesis.nNonce);
         	printf("New genesis hash: %s\n", genesis.GetHash().ToString().c_str());
