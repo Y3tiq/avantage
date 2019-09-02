@@ -13,6 +13,7 @@
 #include "utilstrencodings.h"
 #include <assert.h>
 #include <boost/assign/list_of.hpp>
+#include <arith_uint256.h>
 
 using namespace std;
 using namespace boost::assign;
