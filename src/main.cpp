@@ -2168,7 +2168,7 @@ int64_t GetBlockValue(int nHeight)
     int64_t nSubsidy = 0;
 	if (nHeight == 0) {
 		nSubsidy = 230000000 * COIN;
-    } else if (nHeight > 0 && nHeight <= SLOW_START_BLOCK) { // 10000
+    } else if (nHeight > 0 && nHeight <= SLOW_START_BLOCK) { // 19200
         nSubsidy = 20 * COIN;
     } else if (nHeight > SLOW_START_BLOCK && nHeight <= 701265) {
         nSubsidy = MAX_REWARD * COIN;
@@ -2201,67 +2201,25 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, unsigned mnTier)
         } else  {
             ret = blockValue * 0.4;
         }
-    } else if (nHeight > SLOW_START_BLOCK && nHeight <= 5000) {
+    } else if (nHeight > SLOW_START_BLOCK && nHeight <= 701265) {
         if (mnTier == CMasternode::nodeTier::SUPERNODE) {
             ret = blockValue * 0.4; // 50 = 20 + 20+ 10
         } else  {
             ret = blockValue * 0.4;
         }
-    } else if (nHeight > 5000 && nHeight <= 10000) {
+    } else if (nHeight > 701265 && nHeight <= 2103795) {
         if (mnTier == CMasternode::nodeTier::SUPERNODE) {
             ret = blockValue * 0.4; // 40 = 16 + 16 + 8
         } else  {
             ret = blockValue * 0.4;
         }
-    } else if (nHeight > 10000 && nHeight <= 15000) {
+    } else if (nHeight > 2103795 && nHeight <= 14025300) {
         if (mnTier == CMasternode::nodeTier::SUPERNODE) {
             ret = blockValue * 0.4; // 30= 12 + 12 + 6
         } else  {
             ret = blockValue * 0.4;
 		}
-    } else if (nHeight > 15000 && nHeight <= 20000) {
-        if (mnTier == CMasternode::nodeTier::SUPERNODE) {
-            ret = blockValue * 0.4; // 40 = 16 + 16 + 8
-        } else  {
-            ret = blockValue * 0.4;
-        }
-    } else if (nHeight > 20000 && nHeight <= 25000) {
-        if (mnTier == CMasternode::nodeTier::SUPERNODE) {
-            ret = blockValue * 0.4; // 40 = 16 + 16 + 8
-        } else  {
-            ret = blockValue * 0.4;
-        }
-    } else if (nHeight > 25000 && nHeight <= 30000) {
-        if (mnTier == CMasternode::nodeTier::SUPERNODE) {
-            ret = blockValue * 0.4; // 40 = 16 + 16 + 8
-        } else  {
-            ret = blockValue * 0.4;
-        }
-    } else if (nHeight > 30000 && nHeight <= 35000) {
-        if (mnTier == CMasternode::nodeTier::SUPERNODE) {
-            ret = blockValue * 0.4; // 40 = 16 + 16 + 8
-        } else  {
-            ret = blockValue * 0.4;
-        }
-    } else if (nHeight > 35000 && nHeight <= 40000) {
-        if (mnTier == CMasternode::nodeTier::SUPERNODE) {
-            ret = blockValue * 0.4; // 40 = 16 + 16 + 8
-        } else  {
-            ret = blockValue * 0.4;
-        }
-    } else if (nHeight > 40000 && nHeight <= 45000) {
-        if (mnTier == CMasternode::nodeTier::SUPERNODE) {
-            ret = blockValue * 0.4; // 40 = 16 + 16 + 8
-        } else  {
-            ret = blockValue * 0.4;
-        }
-    } else if (nHeight > 45000 && nHeight <= 50000) {
-        if (mnTier == CMasternode::nodeTier::SUPERNODE) {
-            ret = blockValue * 0.4; // 20 = 8 + 8 + 4
-        } else  {
-            ret = blockValue * 0.4;
-        }
-	} else if (nHeight > 50000) {
+	} else if (nHeight > 14025300) {
         if (mnTier == CMasternode::nodeTier::SUPERNODE) {
             ret = blockValue * 0.4; // 20 = 8 + 8 + 4
         } else  {
