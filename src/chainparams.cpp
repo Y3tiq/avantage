@@ -153,8 +153,8 @@ public:
         	printf("New genesis hash: %s\n", genesis.GetHash().ToString().c_str());
         	printf("Now replace the values, reComment the Genesis mining code and reCompile. \n");
     	}
-        assert(hashGenesisBlock == uint256("0x0000dc8f3f36a919ad8ae16a161ef75e7c460a8bf1998806b8963be5f6dd6fd2"));
-        assert(genesis.hashMerkleRoot == uint256("0x600a730d2d43f5006423ec0d22bf3247d22e971e1c7283cbd05a9fe464903d8d"));
+        assert(hashGenesisBlock == uint256("0x001"));
+        assert(genesis.hashMerkleRoot == uint256("0x001"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23); // A
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 70); // V
