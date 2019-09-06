@@ -72,7 +72,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-	(0, uint256("0x001"));
+	(0, uint256("0x0000f5ad304b1830953fb0e675a75ab2d75ee4c35c87195bb55adf2a18b638f0"));
 
     static const Checkpoints::CCheckpointData data = {
         &mapCheckpoints,
@@ -141,9 +141,9 @@ public:
         nBlockEnforceSerialRange = 1004;      // Enforce serial range starting this block
         nZerocoinStartTime = 4102444799;      //
 
-        genesis = CreateGenesisBlock(1567796774, 168455, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1567796774, 3725, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
-		if (true) {
+		/*if (true) {
         	printf("Genesis mining started\n");
         	genesis.nNonce = 0;
         	hashGenesisBlock = uint256("0x001");
@@ -152,8 +152,8 @@ public:
         	printf("New genesis nonce: %lu\n", (unsigned long)genesis.nNonce);
         	printf("New genesis hash: %s\n", genesis.GetHash().ToString().c_str());
         	printf("Now replace the values, reComment the Genesis mining code and reCompile. \n");
-    	}
-        assert(hashGenesisBlock == uint256("0x00001755949513ab5dfce6f7f0ced93388c8662b9ba1753b06f2c17dba60cf2f"));
+    	}*/
+        assert(hashGenesisBlock == uint256("0x0000f5ad304b1830953fb0e675a75ab2d75ee4c35c87195bb55adf2a18b638f0"));
         assert(genesis.hashMerkleRoot == uint256("0x600a730d2d43f5006423ec0d22bf3247d22e971e1c7283cbd05a9fe464903d8d"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23); // A
@@ -231,9 +231,9 @@ public:
         nModifierUpdateBlock = 0;
         nMaxMoneyOut = 400000000 * COIN;
 
-        genesis = CreateGenesisBlock(1567796774, 168455, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1567796774, 3725, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00001755949513ab5dfce6f7f0ced93388c8662b9ba1753b06f2c17dba60cf2f"));
+        assert(hashGenesisBlock == uint256("0x0000f5ad304b1830953fb0e675a75ab2d75ee4c35c87195bb55adf2a18b638f0"));
         assert(genesis.hashMerkleRoot == uint256("0x600a730d2d43f5006423ec0d22bf3247d22e971e1c7283cbd05a9fe464903d8d"));
 
         vFixedSeeds.clear();
@@ -294,9 +294,9 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nDefaultPort = 17745;
 
-        genesis = CreateGenesisBlock(1567796774, 168455, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1567796774, 3725, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00001755949513ab5dfce6f7f0ced93388c8662b9ba1753b06f2c17dba60cf2f"));
+        assert(hashGenesisBlock == uint256("0x0000f5ad304b1830953fb0e675a75ab2d75ee4c35c87195bb55adf2a18b638f0"));
         assert(genesis.hashMerkleRoot == uint256("0x600a730d2d43f5006423ec0d22bf3247d22e971e1c7283cbd05a9fe464903d8d"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
