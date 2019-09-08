@@ -89,7 +89,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
         0};
 
     static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
-        boost::assign::map_list_of(0, uint256("0x001"));
+        boost::assign::map_list_of(0, uint256("0x0000bc76386c49d5bce5f7675f864169d160e2b8db745c8dffbeeadde4f2795f"));
     static const Checkpoints::CCheckpointData dataRegtest = {
         &mapCheckpointsRegtest,
         1567918802,
@@ -284,19 +284,9 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nDefaultPort = 17745;
 
-        genesis = CreateGenesisBlock(1567918802, 3725, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1567918802, 91145, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
-		if (true) {
-        	printf("Genesis mining started\n");
-        	genesis.nNonce = 0;
-        	hashGenesisBlock = uint256("0x001");
-        	for(genesis.nNonce = 0; uint256(genesis.GetHash()) > uint256("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); genesis.nNonce++){  }
-        	printf("New genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-        	printf("New genesis nonce: %lu\n", (unsigned long)genesis.nNonce);
-        	printf("New genesis hash: %s\n", genesis.GetHash().ToString().c_str());
-        	printf("Now replace the values, reComment the Genesis mining code and reCompile. \n");
-    	}
-        assert(hashGenesisBlock == uint256("0x0000f5ad304b1830953fb0e675a75ab2d75ee4c35c87195bb55adf2a18b638f0"));
+        assert(hashGenesisBlock == uint256("0x0000bc76386c49d5bce5f7675f864169d160e2b8db745c8dffbeeadde4f2795f"));
         assert(genesis.hashMerkleRoot == uint256("0x600a730d2d43f5006423ec0d22bf3247d22e971e1c7283cbd05a9fe464903d8d"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
