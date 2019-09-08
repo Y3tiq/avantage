@@ -72,7 +72,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-	(0, uint256("0x001"));
+	(0, uint256("0x0000847fa9d7d98e0982726443f75bdb5cf6f5c3fc375afebab1c513a51201ca"));
 
     static const Checkpoints::CCheckpointData data = {
         &mapCheckpoints,
@@ -112,10 +112,10 @@ public:
     {
         networkID = CBaseChainParams::MAIN;
         strNetworkID = "main";
-		pchMessageStart[0] = 0xcd;
-		pchMessageStart[1] = 0xca;
+		pchMessageStart[0] = 0xd2;
+		pchMessageStart[1] = 0xba;
 		pchMessageStart[2] = 0xcc;
-		pchMessageStart[3] = 0xcf;
+		pchMessageStart[3] = 0x95;
         vAlertPubKey = ParseHex("04205a171875334f9fae4f62b202bf0424acceca752aca2c76be0541a7adc06833bd56315fdb9c1e472918c6239ba118c43fd8b79aab23810d2733efc64c782b24");
         nDefaultPort = 8489;
         bnProofOfWorkLimit = ~uint256(0) >> 20;
@@ -141,19 +141,9 @@ public:
         nBlockEnforceSerialRange = 1004;      // Enforce serial range starting this block
         nZerocoinStartTime = 4102444799;      //
 
-        genesis = CreateGenesisBlock(1567958400, 20285, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1567958400, 91761, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
-		if (true) {
-        	printf("Genesis mining started\n");
-        	genesis.nNonce = 0;
-        	hashGenesisBlock = uint256("0x001");
-        	for(genesis.nNonce = 0; uint256(genesis.GetHash()) > uint256("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); genesis.nNonce++){  }
-        	printf("New genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-        	printf("New genesis nonce: %lu\n", (unsigned long)genesis.nNonce);
-        	printf("New genesis hash: %s\n", genesis.GetHash().ToString().c_str());
-        	printf("Now replace the values, reComment the Genesis mining code and reCompile. \n");
-    	}
-        assert(hashGenesisBlock == uint256("0x0000e1e66f2deac65c76f5c5d22f096697fcb274822c45e17c61a2dcfd523263"));
+        assert(hashGenesisBlock == uint256("0x0000847fa9d7d98e0982726443f75bdb5cf6f5c3fc375afebab1c513a51201ca"));
         assert(genesis.hashMerkleRoot == uint256("0x600a730d2d43f5006423ec0d22bf3247d22e971e1c7283cbd05a9fe464903d8d"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23); // A
@@ -214,10 +204,10 @@ public:
     {
         networkID = CBaseChainParams::TESTNET;
         strNetworkID = "test";
-        pchMessageStart[0] = 0xac;
-		pchMessageStart[1] = 0xbf;
-		pchMessageStart[2] = 0xda;
-		pchMessageStart[3] = 0x90;
+        pchMessageStart[0] = 0xd7;
+		pchMessageStart[1] = 0x98;
+		pchMessageStart[2] = 0xd1;
+		pchMessageStart[3] = 0xae;
         vAlertPubKey = ParseHex("04ade234b2728725555c2a65550aa5255a2dcef0ab8d5e4cbe97e41b835091e5f5033f2d01ea26fddcba3a1564a9ec5c2afc858b6e5a36e6541378a002cc4bfcaa");
         nDefaultPort = 17634;
         nEnforceBlockUpgradeMajority = 51;
@@ -233,6 +223,16 @@ public:
 
         genesis = CreateGenesisBlock(1567958401, 28836, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
+		if (true) {
+        	printf("Genesis mining started\n");
+        	genesis.nNonce = 0;
+        	hashGenesisBlock = uint256("0x001");
+        	for(genesis.nNonce = 0; uint256(genesis.GetHash()) > uint256("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); genesis.nNonce++){  }
+        	printf("New genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
+        	printf("New genesis nonce: %lu\n", (unsigned long)genesis.nNonce);
+        	printf("New genesis hash: %s\n", genesis.GetHash().ToString().c_str());
+        	printf("Now replace the values, reComment the Genesis mining code and reCompile. \n");
+    	}
         assert(hashGenesisBlock == uint256("0x0000aa69d894bada34856d4cb59e63d071bb6b6b8e26ccf9498491c2ed4dd458"));
         assert(genesis.hashMerkleRoot == uint256("0x600a730d2d43f5006423ec0d22bf3247d22e971e1c7283cbd05a9fe464903d8d"));
 
@@ -281,10 +281,10 @@ public:
     {
         networkID = CBaseChainParams::REGTEST;
         strNetworkID = "regtest";
-        pchMessageStart[0] = 0xf3;
-		pchMessageStart[1] = 0x89;
-		pchMessageStart[2] = 0x90;
-		pchMessageStart[3] = 0x97;
+        pchMessageStart[0] = 0xeb;
+		pchMessageStart[1] = 0xc4;
+		pchMessageStart[2] = 0x9a;
+		pchMessageStart[3] = 0xad;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
