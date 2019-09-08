@@ -81,7 +81,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
         100};      // * estimated number of transactions per day after checkpoint
 
     static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-        boost::assign::map_list_of(0, uint256("0x001"));
+        boost::assign::map_list_of(0, uint256("0x0000aa69d894bada34856d4cb59e63d071bb6b6b8e26ccf9498491c2ed4dd458"));
     static const Checkpoints::CCheckpointData dataTestnet = {
         &mapCheckpointsTestnet,
         1567918801,
@@ -221,19 +221,9 @@ public:
         nModifierUpdateBlock = 0;
         nMaxMoneyOut = 400000000 * COIN;
 
-        genesis = CreateGenesisBlock(1567918801, 3725, 0x1f00ffff);
+        genesis = CreateGenesisBlock(1567918801, 28836, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
-		if (true) {
-        	printf("Genesis mining started\n");
-        	genesis.nNonce = 0;
-        	hashGenesisBlock = uint256("0x001");
-        	for(genesis.nNonce = 0; uint256(genesis.GetHash()) > uint256("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); genesis.nNonce++){  }
-        	printf("New genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-        	printf("New genesis nonce: %lu\n", (unsigned long)genesis.nNonce);
-        	printf("New genesis hash: %s\n", genesis.GetHash().ToString().c_str());
-        	printf("Now replace the values, reComment the Genesis mining code and reCompile. \n");
-    	}
-        assert(hashGenesisBlock == uint256("0x0000f5ad304b1830953fb0e675a75ab2d75ee4c35c87195bb55adf2a18b638f0"));
+        assert(hashGenesisBlock == uint256("0x0000aa69d894bada34856d4cb59e63d071bb6b6b8e26ccf9498491c2ed4dd458"));
         assert(genesis.hashMerkleRoot == uint256("0x600a730d2d43f5006423ec0d22bf3247d22e971e1c7283cbd05a9fe464903d8d"));
 
         vFixedSeeds.clear();
@@ -296,6 +286,16 @@ public:
 
         genesis = CreateGenesisBlock(1567918802, 3725, 0x1f00ffff);
         hashGenesisBlock = genesis.GetHash();
+		if (true) {
+        	printf("Genesis mining started\n");
+        	genesis.nNonce = 0;
+        	hashGenesisBlock = uint256("0x001");
+        	for(genesis.nNonce = 0; uint256(genesis.GetHash()) > uint256("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); genesis.nNonce++){  }
+        	printf("New genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
+        	printf("New genesis nonce: %lu\n", (unsigned long)genesis.nNonce);
+        	printf("New genesis hash: %s\n", genesis.GetHash().ToString().c_str());
+        	printf("Now replace the values, reComment the Genesis mining code and reCompile. \n");
+    	}
         assert(hashGenesisBlock == uint256("0x0000f5ad304b1830953fb0e675a75ab2d75ee4c35c87195bb55adf2a18b638f0"));
         assert(genesis.hashMerkleRoot == uint256("0x600a730d2d43f5006423ec0d22bf3247d22e971e1c7283cbd05a9fe464903d8d"));
 
