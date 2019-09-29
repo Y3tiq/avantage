@@ -42,3 +42,4 @@ config.log
 config.status
 logs
 
+contrib/avantage-qt.pro.user
